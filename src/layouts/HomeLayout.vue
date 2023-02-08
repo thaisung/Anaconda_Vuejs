@@ -18,7 +18,7 @@
   import RunText from '@/components/RunText.vue'
   import LogoBanner from '@/components/LogoBanner.vue'
   import TabPage from '@/components/TabPage.vue'
-  import FooTer from '@/components/FooTer.vue'
+  import Footer from '@/components/Footer.vue'
 
   import { useCounterStore } from '@/stores/counter';
 
@@ -38,7 +38,7 @@
       RunText,
       LogoBanner,
       TabPage,
-      FooTer,
+      Footer,
     }
   }
   </script>
