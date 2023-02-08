@@ -3,13 +3,17 @@ import axios from 'axios';
 
 import VueCookies from 'vue-cookies'
 import { fa0 } from '@fortawesome/free-solid-svg-icons';
+
+import {useRoute} from 'vue-router';
+
+const Route = useRoute();
     
 
 export const useCounterStore = defineStore('counter', {
   state: () => {
     return { openMoon:1, openDark:'darkk', opentieudedangnhap:1, showdangnhap:false, opendangki:1, openbgdangki:1, 
-             showdoimatkhau: false, opendoimatkhau:1, opentab:1, showbangthongtin: false,opendangkithanhcong:1,
-             showbangmuasanpham:false, showbangmuathanhcongsanpham:false,showbangmuakhongthanhcongsanpham:false,opentabpersonal:1,openinformation:0,openimage:0,
+             showdoimatkhau: false, opendoimatkhau:1, showbangthongtin: false,opendangkithanhcong:1,
+             showbangmuasanpham:false, showbangmuathanhcongsanpham:false,showbangmuakhongthanhcongsanpham:false,openinformation:0,openimage:0,
              opensoluong:null,openthongtincanhan:{token:'th'},openemail:null,openusername:null,openpassword:null,openmoney:0,openiduser:null,
              cookie:null,opentokenuser:{},usertokenid:null,items:null,opentieudedangnhapp:1,datauser:null,admins:null,trangthaidangki:{"data":{"email":["e"],"username":["u"],"password":["p"]}},
              openthongbaoloiemail:{thongbao:'thong bao e',so:2},openthongbaoloiusername:{thongbao:'thong bao u',so:2},openthongbaoloipassword:{thongbao:'thong bao p',so:2},Statusdangnhap:'th',
@@ -21,6 +25,16 @@ export const useCounterStore = defineStore('counter', {
              thongbaoloiyeucaunaptien:{data:{"Error message":'th',"Recharge data":{"username":'th',"Old amount":0,"Amount deposited":0,"New amount":0},}},URLServer:'http://127.0.0.1:8000',URLServerF:'http://127.0.0.1',thongbaoloinhaptien:1,matxemtoken:true,copythanhcong:1,
              showbangchitietdonhang:'th',CodeOderHistory:null,prehistory:null,showcaptcha:{so:1,nut:'cursor-not-allowed'},thongbaoloixacthuccaptcha:{so:1,thongbao:'th',thongbaoenglish:'th'},reponseCaptcha:'',rctc:null,rctc1:null,rctc2:null,pagehistory:1,seachcode:null,sttlsgd:1,language:1,
              tabapi:2,tabadmin:1,thongkethanhvien:[],stv:'',stvlg:'',thongketaichinh:[],stc:'',stctt:'',check_box:false,
+             Route:useRoute(),tab_parent:{home_page:'/',
+                                      personal_page_information:'/personal/information',
+                                      personal_page_accuracy:'/personal/accuracy',
+                                      personal_page_changepassword:'/personal/changepassword',
+                                      personal_recharge:'/personal/recharge',
+                                      personal_history:'/history',
+                                      personal_APIdocumentation:'/APIdocumentation',
+                                     },
+                              
+                              
              
   }
   },
@@ -101,13 +115,11 @@ export const useCounterStore = defineStore('counter', {
     openDoimatkhau(aa) {
       this.opendoimatkhau = aa;
     },
-    openTab(aa) {
-      this.opentab = aa;
+    openTab() {
       this.thongbaodoimatkhauthanhcong = {thongbao:'thong bao o_p',thongbaoenglish:'thong bao o_p',so:3};
       this.matkhaucu = null;
       this.matkhaumoi = null;
       this.nhaplaimatkhaumoi =  null;
-      this.opentabpersonal = 1;
       this.setStatevaoLocalStorage1();
       this.setStatevaoLocalStorage();
 
@@ -127,9 +139,7 @@ export const useCounterStore = defineStore('counter', {
     showBangmuakhongthanhcongsanpham() {
       this.showbangmuakhongthanhcongsanpham = !this.showbangmuakhongthanhcongsanpham;
     },
-    openTabpersonal(aa) {
-      this.opentabpersonal = aa;
-      // this.opentabpersonal = 1;
+    openTabpersonal() {
       this.thongbaodoimatkhauthanhcong = {thongbao:'thong bao o_p',thongbaoenglish:'thong bao o_p',so:3};
       this.matkhaucu = null;
       this.matkhaumoi = null;
@@ -185,10 +195,6 @@ export const useCounterStore = defineStore('counter', {
       this.openthongbaoloiusername = {thongbao:'thong bao u',so:2};
       this.openthongbaoloipassword = {thongbao:'thong bao p',so:2};
       this.Statusdangnhap = null;
-      this.opentab = 1;
-      localStorage.setItem('opentab', this.opentab);
-      this.opentabpersonal = 1;
-      localStorage.setItem('opentabpersonal', this.opentab);
       VueCookies.remove("username");
       this.opentokenuser = {};
       this.opentieudedangnhap = 1;
@@ -207,10 +213,6 @@ export const useCounterStore = defineStore('counter', {
       this.openthongbaoloiusername = {thongbao:'thong bao u',so:2};
       this.openthongbaoloipassword = {thongbao:'thong bao p',so:2};
       this.Statusdangnhap = null;
-      this.opentab = 1;
-      localStorage.setItem('opentab', this.opentab);
-      this.opentabpersonal = 1;
-      localStorage.setItem('opentabpersonal', this.opentab);
       VueCookies.remove("username");
       this.opentokenuser = {};
       this.opentieudedangnhap = 1;
@@ -285,11 +287,6 @@ export const useCounterStore = defineStore('counter', {
         this.openthongtincanhan =  await this.openthongtincanhan.data.data_user;
         this.opentieudedangnhap = 1;
         this.TransactionHistory();
-        // this.setStatevaoLocalStorage();
-        // this.opentab = 1;
-        // this.setStatetuLocalStorage();
-
-        // setTimeout(this.getCookievadangnhaptaikhoan, 60000);
       }
       catch{
         this.opentokenuser = {}
