@@ -226,7 +226,7 @@ export const useCounterStore = defineStore('counter', {
       this.openthongtincanhan = aa
     },
     setCookie(){
-      VueCookies.set("username", this.openthongtincanhan.token + "(eab42d241cad8d)" + this.openthongtincanhan.id,"7d");
+      VueCookies.set("username", this.openthongtincanhan.token + "eab42d241cad8d" + this.openthongtincanhan.id,"7d");
     },
     async dangnhaptaikhoanvataocookie(){
       try{
@@ -280,7 +280,7 @@ export const useCounterStore = defineStore('counter', {
     },
     async getCookievadangnhaptaikhoan(){
       try{
-        this.usertokenid = await VueCookies.get("username").split("(eab42d241cad8d)");
+        this.usertokenid = await VueCookies.get("username").split("eab42d241cad8d");
         this.opentokenuser = await this.usertokenid[0];
         this.openiduser = await this.usertokenid[1];
         this.openthongtincanhan = await axios({method:'get',url: this.URLServer+'/keeplogin/',params:{"id":this.openiduser,"token":this.opentokenuser},headers: {Authorization: 'Token ' + this.opentokenuser }});
