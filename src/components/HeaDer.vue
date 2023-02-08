@@ -134,11 +134,11 @@
       <div class="flex flex-col mt-5 gap-1 sm:hidden">
         <div class="flex justify-center items-center gap-1" v-bind:class="{'hidden': counter.openbgdangki !== 1 , 'block': counter.openbgdangki === 1 }">
           <div class="text-[14px] text-lime-900 hover:text-lime-700 dark:text-lime-600 dark:hover:text-lime-600  font-semibold antialiased"><h1 v-if="counter.language==1">Đăng kí tài khoản tại đây !</h1><h1 v-if="counter.language==2">Sign up for an account here !</h1></div>
-          <div v-on:click="counter.openDangki(2); counter.openBgdangki(2); grecaptcha.reset(this.ciunter.rctc);" class=" flex items-center justify-center text-[11px]  font-bold bg-sky-600  h-[25px] w-[70px] rounded hover:bg-sky-500  cussor-pointer duration-300"><button class=" text-white  uppercase rounded " type="button"><h1 v-if="counter.language==1">Đăng kí</h1><h1 v-if="counter.language==2">Register</h1></button></div>
+          <div v-on:click="counter.openDangki(2); counter.openBgdangki(2); grecaptcha.reset(this.ciunter.rctc);" class=" flex items-center justify-center text-[11px]  font-bold bg-sky-600 px-2 py-1 rounded hover:bg-sky-500  cussor-pointer duration-300"><button class=" text-white  uppercase rounded " type="button"><h1 v-if="counter.language==1">Đăng kí</h1><h1 v-if="counter.language==2">Register</h1></button></div>
         </div>
         <div class="flex gap-1 items-center justify-center" v-bind:class="{'hidden': counter.openbgdangki !== 2, 'block':counter.openbgdangki === 2}">
           <div class="text-[14px] text-lime-900 hover:text-lime-700 dark:text-lime-600 dark:hover:text-lime-600  font-semibold antialiased"><h1 v-if="counter.language==1">Đăng nhập tài khoản tại đây !</h1><h1 v-if="counter.language==2">Log in to your account here !</h1></div>
-          <div v-on:click="counter.openDangki(1); counter.openBgdangki(1); counter.openDangkithanhcong(1); grecaptcha.reset(this.counter.rctc1);" class=" flex items-center justify-center text-[11px]  font-bold bg-sky-600  h-[25px] w-[70px] rounded hover:bg-sky-500  cussor-pointer duration-300"><button class=" text-white  uppercase rounded " type="button"><h1 v-if="counter.language==1">Đăng nhập</h1><h1 v-if="counter.language==2">Log in</h1></button></div>
+          <div v-on:click="counter.openDangki(1); counter.openBgdangki(1); counter.openDangkithanhcong(1); grecaptcha.reset(this.counter.rctc1);" class=" flex items-center justify-center text-[11px]  font-bold bg-sky-600 px-2 py-1 rounded hover:bg-sky-500  cussor-pointer duration-300"><button class=" text-white  uppercase rounded " type="button"><h1 v-if="counter.language==1">Đăng nhập</h1><h1 v-if="counter.language==2">Log in</h1></button></div>
         </div>
       </div>
     </div>
