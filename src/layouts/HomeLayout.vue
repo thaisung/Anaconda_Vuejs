@@ -18,7 +18,7 @@
   import RunText from '@/components/RunText.vue'
   import LogoBanner from '@/components/LogoBanner.vue'
   import TabPage from '@/components/TabPage.vue'
-  import FooTer from '@/components/Footer.vue'
+  import FooTer from '@/components/FooTer.vue'
 
   import { useCounterStore } from '@/stores/counter';
 
