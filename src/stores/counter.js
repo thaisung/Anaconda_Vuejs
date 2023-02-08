@@ -24,7 +24,7 @@ export const useCounterStore = defineStore('counter', {
              loithongbaomua:{thongbao:'thong bao u',so:2},iten:{Name:'th'},thongbaoloimuahang:{thongbao:'thong bao u',so:2},thongbaoloitaifileTxt:null,tabnaptien:1,quetmaqr:1,bankinfor:{data:'th'},manaptien:null,manganhang:null,sotiencannap:null,showbangqr:1,tabmaqr:null,
              thongbaoloiyeucaunaptien:{data:{"Error message":'th',"Recharge data":{"username":'th',"Old amount":0,"Amount deposited":0,"New amount":0},}},URLServer:'http://127.0.0.1:8000',URLServerF:'http://127.0.0.1',thongbaoloinhaptien:1,matxemtoken:true,copythanhcong:1,
              showbangchitietdonhang:'th',CodeOderHistory:null,prehistory:null,showcaptcha:{so:1,nut:'cursor-not-allowed'},thongbaoloixacthuccaptcha:{so:1,thongbao:'th',thongbaoenglish:'th'},reponseCaptcha:'',rctc:null,rctc1:null,rctc2:null,pagehistory:1,seachcode:null,sttlsgd:1,language:1,
-             tabapi:2,tabadmin:1,thongkethanhvien:[],stv:'',stvlg:'',thongketaichinh:[],stc:'',stctt:'',check_box:false,
+             tabapi:2,tabadmin:1,thongkethanhvien:[],stv:'',stvlg:'',thongketaichinh:[],stc:'',stctt:'',check_box:false,site_key_captcha2:'6LfaruMjAAAAAPFwSCuW4-Yda-D-CN8JqZWq6M9O',
              Route:useRoute(),tab_parent:{home_page:'/',
                                       personal_page_information:'/personal/information',
                                       personal_page_accuracy:'/personal/accuracy',

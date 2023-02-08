@@ -77,7 +77,7 @@
         </div>
         <div v-show="counter.openthongbaoloidangnhap.so ==1 && counter.language ==1"  class="text-[13px] text-red-600 "><h1>{{ counter.openthongbaoloidangnhap.thongbao }}</h1></div>
         <div v-show="counter.openthongbaoloidangnhap.so ==1 && counter.language ==2"  class="text-[13px] text-red-600 "><h1>{{ counter.openthongbaoloidangnhap.thongbaoenglish }}</h1></div>
-        <div v-show="counter.showcaptcha.so == 2"  id="g-recaptcha" data-callback="recaptchaCallback"   style="transform: scale(0.9); -webkit-transform: scale(0.9); transform-origin: 0 0; -webkit-transform-origin: 0 0;" v-bind:data-theme="{'light':counter.openMoon==1,'dark':counter.openMoon==2}"  data-sitekey="6LfaruMjAAAAALdEG9aH6Q2qIvlqHeotuCWe2dJs"></div>
+        <div v-show="counter.showcaptcha.so == 2"  id="g-recaptcha" data-callback="recaptchaCallback"   style="transform: scale(0.9); -webkit-transform: scale(0.9); transform-origin: 0 0; -webkit-transform-origin: 0 0;" v-bind:data-theme="{'light':counter.openMoon==1,'dark':counter.openMoon==2}"   v-bind:data-sitekey="counter.site_key_captcha2"></div>
         <div v-show="counter.thongbaoloixacthuccaptcha.so == 2 && counter.language ==1"  class="text-[13px] text-red-600 "><h1>{{ counter.thongbaoloixacthuccaptcha.thongbao }}</h1></div>
         <div v-show="counter.thongbaoloixacthuccaptcha.so == 2 && counter.language ==2"  class="text-[13px] text-red-600 "><h1>{{ counter.thongbaoloixacthuccaptcha.thongbaoenglish }}</h1></div>
         <div class="flex justify-between">
@@ -119,7 +119,7 @@
         </div>
         <div v-show="counter.thongbaoloidangkitaikhoan.so == 2 && counter.language == 1"  class=" flex text-[13px] text-red-600  font-medium"><h1>{{ counter.thongbaoloidangkitaikhoan.thongbao }}</h1></div>
         <div v-show="counter.thongbaoloidangkitaikhoan.so == 2 && counter.language == 2"  class=" flex text-[13px] text-red-600  font-medium"><h1>{{ counter.thongbaoloidangkitaikhoan.thongbaoenglish }}</h1></div>
-        <div v-show="counter.showcaptcha.so == 2"  id="g-recaptcha1" data-callback="recaptchaCallback"   style="transform: scale(0.9); -webkit-transform: scale(0.9); transform-origin: 0 0; -webkit-transform-origin: 0 0;" data-theme="light" data-sitekey="6LfaruMjAAAAALdEG9aH6Q2qIvlqHeotuCWe2dJs"></div>
+        <div v-show="counter.showcaptcha.so == 2"  id="g-recaptcha1" data-callback="recaptchaCallback"   style="transform: scale(0.9); -webkit-transform: scale(0.9); transform-origin: 0 0; -webkit-transform-origin: 0 0;" data-theme="light" v-bind:data-sitekey="counter.site_key_captcha2"></div>
         <div v-show="counter.thongbaoloixacthuccaptcha.so == 2 && counter.language == 1"  class="text-[13px] text-red-600 "><h1>{{ counter.thongbaoloixacthuccaptcha.thongbao }}</h1></div>
         <div v-show="counter.thongbaoloixacthuccaptcha.so == 2 && counter.language == 2"  class="text-[13px] text-red-600 "><h1>{{ counter.thongbaoloixacthuccaptcha.thongbaoenglish }}</h1></div>
         <div v-show="counter.showcaptcha.so==1" class=" font-bold text-[14px]"><button v-on:click="rendercaptchadangki(); counter.showcaptcha.so=2;" class=" py-1.5 bg-sky-600  text-white  uppercase rounded hover:bg-sky-500    duration-100 w-full " type="button"><h1 v-if="counter.language==1">Đăng kí</h1><h1 v-if="counter.language==2">Register</h1></button></div>
