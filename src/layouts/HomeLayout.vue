@@ -38,7 +38,7 @@
       RunText,
       LogoBanner,
       TabPage,
-      FooTer
+      FooTer,
     }
   }
   </script>
