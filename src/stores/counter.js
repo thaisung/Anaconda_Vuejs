@@ -23,7 +23,7 @@ export const useCounterStore = defineStore('counter', {
              product_name_buy:null,quantity_buy:null,thongbaoloidangkitaikhoan:{so:1,thongbao:'th'},thongtindoimatkhau:null,
              loithongbaomua:{thongbao:'thong bao u',so:2},iten:{Name:'th'},thongbaoloimuahang:{thongbao:'thong bao u',so:2},thongbaoloitaifileTxt:null,tabnaptien:1,quetmaqr:1,bankinfor:{data:'th'},manaptien:null,manganhang:null,sotiencannap:null,showbangqr:1,tabmaqr:null,
              thongbaoloiyeucaunaptien:{data:{"Error message":'th',"Recharge data":{"username":'th',"Old amount":0,"Amount deposited":0,"New amount":0},}},URLServer:'http://127.0.0.1:8000',URLServerF:'http://127.0.0.1',thongbaoloinhaptien:1,matxemtoken:true,copythanhcong:1,
-             showbangchitietdonhang:'th',CodeOderHistory:null,prehistory:null,showcaptcha:{so:1,nut:'cursor-not-allowed'},thongbaoloixacthuccaptcha:{so:1,thongbao:'th',thongbaoenglish:'th'},reponseCaptcha:'',rctc:null,rctc1:null,rctc2:null,pagehistory:1,seachcode:null,sttlsgd:1,language:1,
+             showbangchitietdonhang:'th',CodeOderHistory:null,NamePoductHistory:null,prehistory:null,showcaptcha:{so:1,nut:'cursor-not-allowed'},thongbaoloixacthuccaptcha:{so:1,thongbao:'th',thongbaoenglish:'th'},reponseCaptcha:'',rctc:null,rctc1:null,rctc2:null,pagehistory:1,seachcode:null,sttlsgd:1,language:1,
              tabapi:2,tabadmin:1,thongkethanhvien:[],stv:'',stvlg:'',thongketaichinh:[],stc:'',stctt:'',check_box:false,site_key_captcha2:'6LfaruMjAAAAAPFwSCuW4-Yda-D-CN8JqZWq6M9O',
              Route:useRoute(),tab_parent:{home_page:'/',
                                       personal_page_information:'/personal/information',
@@ -283,7 +283,7 @@ export const useCounterStore = defineStore('counter', {
         this.usertokenid = await VueCookies.get("username").split("eab42d241cad8d");
         this.opentokenuser = await this.usertokenid[0];
         this.openiduser = await this.usertokenid[1];
-        this.openthongtincanhan = await axios({method:'get',url: this.URLServer+'/keeplogin/',params:{"id":this.openiduser,"token":this.opentokenuser},headers: {Authorization: 'Token ' + this.opentokenuser }});
+        this.openthongtincanhan = await axios({method:'post',url: this.URLServer+'/keeplogin/',data:{"id":this.openiduser,"token":this.opentokenuser},headers: {Authorization: 'Token ' + this.opentokenuser }});
         this.openthongtincanhan =  await this.openthongtincanhan.data.data_user;
         this.opentieudedangnhap = 1;
         this.TransactionHistory();
@@ -348,7 +348,7 @@ export const useCounterStore = defineStore('counter', {
     },
     async usercheckmail(){
       try{
-        this.ketquacheckmail = await axios({method:'get',url: this.URLServer+'/filteruser/',params:{"email":this.openemailcheck}});
+        this.ketquacheckmail = await axios({method:'post',url: this.URLServer+'/filteruser/',data:{"email":this.openemailcheck}});
         this.thongbaocheckmail = {thongbao:"Email cung cấp có tồn tại trong hệ thống !",thongbaoenglish:"Email provided exists in the system !",so:2}
         this.opendoimatkhau = 2;  
       }
@@ -362,7 +362,7 @@ export const useCounterStore = defineStore('counter', {
     },
     async SosanhOTP(){
       try{
-        await axios({method:'get',url: this.URLServer+'/compareotp/',params:{"email":this.openemailcheck,"username":this.userlinkemail,"OTP":this.codeOTP}});
+        await axios({method:'post',url: this.URLServer+'/compareotp/',data:{"email":this.openemailcheck,"username":this.userlinkemail,"OTP":this.codeOTP}});
         this.openDoimatkhau(4);
         thongbaoloiOTP = {thongbao:'thong bao u',so:2};
       }
@@ -382,7 +382,7 @@ export const useCounterStore = defineStore('counter', {
     },
     async TransactionHistory(){
       try{
-        this.dulieulichsugiaodich = await axios({method:'get',url: this.URLServer+'/transactionhistoryuser/',params:{"username":this.openthongtincanhan.username,"token":this.openthongtincanhan.token,"pagehistory":this.pagehistory,"seachcode":this.seachcode},headers:{Authorization: 'Token ' + this.openthongtincanhan.token }});
+        this.dulieulichsugiaodich = await axios({method:'post',url: this.URLServer+'/transactionhistoryuser/',data:{"username":this.openthongtincanhan.username,"token":this.openthongtincanhan.token,"pagehistory":this.pagehistory,"seachcode":this.seachcode},headers:{Authorization: 'Token ' + this.openthongtincanhan.token }});
       }
       catch (error) {
         this.dulieulichsugiaodich = error.response;  
@@ -408,14 +408,14 @@ export const useCounterStore = defineStore('counter', {
     },
     async DownloadFileTxt(){
       try{
-        this.thongbaoloitaifileTxt = await axios({method:'get',url: this.URLServer+'/downloadfiletxt/',params:{"CodeOrders":this.thongbaoloimuahang.data["Order details"]["Code orders"],"token":this.openthongtincanhan.token},headers: {Authorization: 'Token ' + this.openthongtincanhan.token },responseType: 'blob'}).then((response) => {
+        this.thongbaoloitaifileTxt = await axios({method:'post',url: this.URLServer+'/downloadfiletxt/',data:{"CodeOrders":this.thongbaoloimuahang.data["Order details"]["Code orders"],"token":this.openthongtincanhan.token},headers: {Authorization: 'Token ' + this.openthongtincanhan.token },responseType: 'blob'}).then((response) => {
           // create file link in browser's memory
           const href = URL.createObjectURL(response.data);
       
           // create "a" HTML element with href to file & click
           const link = document.createElement('a');
           link.href = href;
-          link.setAttribute('download', this.thongbaoloimuahang.data["Order details"]["Code orders"]+'.txt'); //or any other extension
+          link.setAttribute('download', this.thongbaoloimuahang.data["Order details"]["Product name buy"]+'_'+this.thongbaoloimuahang.data["Order details"]["Code orders"]+'.txt'); //or any other extension 'Product name buy'
           document.body.appendChild(link);
           link.click();
       
@@ -429,16 +429,16 @@ export const useCounterStore = defineStore('counter', {
         this.thongbaoloitaifileTxt = error.response;
       }      
     },
-    async DownloadFileTxt1(){
+    async DownloadFileTxt1(aa){
       try{
-        this.thongbaoloitaifileTxt = await axios({method:'get',url: this.URLServer+'/downloadfiletxt/',params:{"CodeOrders":this.CodeOderHistory,"token":this.openthongtincanhan.token},headers: {Authorization: 'Token ' + this.openthongtincanhan.token },responseType: 'blob'}).then((response) => {
+        this.thongbaoloitaifileTxt = await axios({method:'post',url: this.URLServer+'/downloadfiletxt/',data:{"CodeOrders":this.CodeOderHistory,"token":this.openthongtincanhan.token},headers: {Authorization: 'Token ' + this.openthongtincanhan.token },responseType: 'blob'}).then((response) => {
           // create file link in browser's memory
           const href = URL.createObjectURL(response.data);
       
           // create "a" HTML element with href to file & click
           const link = document.createElement('a');
           link.href = href;
-          link.setAttribute('download', this.CodeOderHistory +'.txt'); //or any other extension
+          link.setAttribute('download', aa +'_'+this.CodeOderHistory +'.txt'); //or any other extension
           document.body.appendChild(link);
           link.click();
       

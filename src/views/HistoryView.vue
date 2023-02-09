@@ -26,7 +26,7 @@
                     <div class="col-span-4 sm:col-span-2  items-center hidden lg:flex"><h1>{{ dh.Code_Orders }}</h1></div>
                     <div class="col-span-2 sm:col-span-2  items-center hidden lg:flex"><h1>{{ dh.Transaction_Time }}</h1></div>
                     <div class="items-center col-span-3 lg:col-span-1"><h1>{{ dh.Payment_Amount }}</h1></div>
-                    <div class="flex items-center col-span-2 lg:col-span-1" v-on:click="counter.showbangchitietdonhang = dh.id; counter.CodeOderHistory=dh.Code_Orders; counter.prehistory='myPrehistory'+dh.id"><button  class="bg-sky-900 dark:bg-sky-400 dark:hover:bg-sky-300 text-white dark:text-slate-900 rounded px-2 py-1 hover:bg-sky-800"><h1 v-if="counter.language==1">Chi tiết</h1><h1 v-if="counter.language==2">Detail</h1></button></div>
+                    <div class="flex items-center col-span-2 lg:col-span-1" v-on:click="counter.showbangchitietdonhang = dh.id; counter.NameProductHistory = dh.Content; counter.CodeOderHistory = dh.Code_Orders; counter.prehistory='myPrehistory'+dh.id"><button  class="bg-sky-900 dark:bg-sky-400 dark:hover:bg-sky-300 text-white dark:text-slate-900 rounded px-2 py-1 hover:bg-sky-800"><h1 v-if="counter.language==1">Chi tiết</h1><h1 v-if="counter.language==2">Detail</h1></button></div>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <div  class="flex gap-1 justify-center  mb-2 w-full h-full mt-2"><pre  :id="'myPrehistory'+dh.id" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1"><h1 >{{ dh['Buy_Data'] }}</h1></pre></div>
         </div>
         <div class="flex justify-center gap-2  font-medium shadow-inner py-2 rounded items-center">
-            <div class="flex justify-center items-center bg-sky-600 rounded w-[100px] h-[30px] dark:hover:bg-sky-500"  v-on:click="counter.DownloadFileTxt1();"><button class=" text-white">Tải file (.txt)</button></div>
+            <div class="flex justify-center items-center bg-sky-600 rounded w-[100px] h-[30px] dark:hover:bg-sky-500"  v-on:click="counter.DownloadFileTxt1(counter.NameProductHistory);"><button class=" text-white">Tải file (.txt)</button></div>
             <div v-on:click=" counter.Copythanhcong(); CopyPrehistory();" class="flex justify-center items-center bg-sky-600 rounded w-[50px] h-[30px]  dark:hover:bg-sky-500"><button class=""><font-awesome-icon icon="fa-solid fa-copy" class="text-white text-[20px]" v-show="counter.copythanhcong==1"/>
             <font-awesome-icon icon="fa-solid fa-check" v-show="counter.copythanhcong==2" class="text-white text-[20px]"/></button></div>
         </div>
