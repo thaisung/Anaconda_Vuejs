@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:fixed z-20 lg:inset-x-0 md:flex-row max-w-[1200px] w-full mx-auto sm:min-h-[46px] text-slate-800 dark:text-gray-200 rounded justify-between py-1 text-[22px]  gap-2 bg-white dark:bg-slate-900 drop-shadow-md ">
+  <div class="flex flex-col lg:fixed z-20 lg:inset-x-0 md:flex-row md:items-center max-w-[1200px] w-full mx-auto md:min-h-[46px] text-slate-800 dark:text-gray-200 rounded justify-between py-1 text-[22px]  gap-2 bg-white dark:bg-slate-900 drop-shadow-md ">
     <div v-for="admin in counter.admins" class="flex flex-row gap-2 justify-center sm:ml-2 font-medium antialiased">
       <div class="flex justify-center items-center gap-0.5"><div><font-awesome-icon icon="fa-solid fa-envelope" /></div><div><h1 class="text-[17px]">{{ admin.Email }}</h1></div></div>
       <div class="flex justify-center items-center gap-0.5"><div><font-awesome-icon icon="fa-solid fa-square-phone" /></div><div><h1 class="text-[17px]">{{ admin.Phone }}</h1></div></div>
@@ -13,8 +13,8 @@
         </div>
       </div>
       <div class="flex items-center gap-0.5 ">
-        <div v-on:click="counter.BrightDark(2,'dark');" v-bind:class="{'hidden': counter.openMoon !== 1, 'block': counter.openMoon === 1}"  class="h-[25px] w-[30px] flex justify-center items-center bg-sky-600 hover:bg-sky-500  rounded"><button type="button"  class=" text-white  text-[15px] rounded-[5px]   duration-300  select-none  focus:shadow-outline  flex items-center "><font-awesome-icon icon="fa-solid fa-sun" class="text-[17px]"/></button></div>
-        <div v-on:click="counter.BrightDark(1,'darkk');" v-bind:class="{'hidden': counter.openMoon !== 2, 'block': counter.openMoon === 2}" class="h-[25px] w-[30px] flex justify-center items-center bg-sky-600 hover:bg-sky-500 rounded"><button type="button"  class="   text-white text-[15px] rounded-[5px]   duration-300  select-none   flex items-center "><font-awesome-icon icon="fa-solid fa-moon" class="text-[17px]" /></button></div>
+        <div v-on:click="counter.BrightDark(2,'dark');" v-bind:class="{'hidden': counter.openMoon !== 1, 'block': counter.openMoon === 1}"  class="h-[25px] w-[25px] flex justify-center items-center bg-sky-600 hover:bg-sky-500  rounded-full"><button type="button"  class=" text-white  text-[15px] rounded-[5px]   duration-300  select-none  focus:shadow-outline  flex items-center "><font-awesome-icon icon="fa-solid fa-sun" class="text-[17px]"/></button></div>
+        <div v-on:click="counter.BrightDark(1,'darkk');" v-bind:class="{'hidden': counter.openMoon !== 2, 'block': counter.openMoon === 2}" class="h-[25px] w-[25px] flex justify-center items-center bg-sky-600 hover:bg-sky-500 rounded-full"><button type="button"  class="   text-white text-[15px] rounded-[5px]   duration-300  select-none   flex items-center "><font-awesome-icon icon="fa-solid fa-moon" class="text-[17px]" /></button></div>
       </div>
     </div>
     
@@ -31,10 +31,12 @@
       </div>   
     </div>
 
-    <div v-if="typeof counter.opentokenuser == 'string'" class="flex justify-center md:mr-2 font-medium antialiased">
+    <div v-if="typeof counter.opentokenuser == 'string'" class="flex justify-center md:mr-2 font-medium antialiased mb-1 md:mb-0">
       <div class="flex gap-2 justify-center text-orange-600 " v-bind:class="{'hidden': counter.opentieudedangnhapp !== 1, 'block': counter.opentieudedangnhapp === 1}">
-        <div class="flex items-center gap-0.5"><div><font-awesome-icon icon="fa-solid fa-user-ninja" /></div><div><h1 class="text-[17px]">{{counter.openthongtincanhan.username}}</h1></div></div>
-        <div class="flex items-center gap-0.5"><div><font-awesome-icon icon="fa-solid fa-wallet" /></div><div><h1 class="text-[17px]">{{counter.openthongtincanhan.Money}}</h1></div></div>
+        <div class="flex gap-2 items-center justify-center shadow-inner bg-gray-100 dark:bg-slate-800  rounded px-2 h-[31px]">
+          <div class="flex items-center gap-0.5"><div><font-awesome-icon icon="fa-solid fa-user-ninja" class="text-[19px]"/></div><div><h1 class="text-[17px]">{{counter.openthongtincanhan.username}}</h1></div></div>
+          <div class="flex items-center gap-0.5"><div><font-awesome-icon icon="fa-solid fa-wallet" class="text-[19px]"/></div><div class="flex justify-center items-center gap-0.5"><h1 class="text-[17px]">{{counter.openthongtincanhan.Money}}</h1><h1 class="h-[2px] w-[6px] bg-orange-600 items-center"></h1><h1 class="text-[17px]">VNĐ</h1></div></div>
+        </div>
         <div class="flex items-center " v-on:click="counter.openTab(2);  counter.setStatevaoLocalStorage(); counter.opentabpersonal = 4; counter.setStatevaoLocalStorage1();"><button type="button" class="flex bg-sky-600  text-white  text-[15px] rounded-[5px] p-[3px]    select-none duration-100 hover:bg-sky-500   px-2  justify-center items-center"><router-link to="/personal/recharge" class="flex justify-center items-center"><font-awesome-icon icon="fa-solid fa-credit-card" class="mr-1 text-[17px]"/><h1 class="hidden lg:flex" v-if="counter.language==1">Nạp tiền</h1><h1 class="hidden lg:flex" v-if="counter.language==2">Recharge</h1></router-link></button></div>
         <div v-on:click=" counter.dangxuattaikhoan1('th');" class="flex items-center justify-center"><button type="button" class="bg-sky-600  text-white  text-[15px] rounded-[5px] p-[3px]  duration-100  -none hover:bg-sky-500   px-2 flex  justify-center items-center" ><router-link to="/" class="flex justify-center items-center"><font-awesome-icon icon="fa-solid fa-right-from-bracket" class="mr-1 text-[17px]"/><h1 class="hidden lg:flex" v-if="counter.language==1">Đăng xuất</h1><h1 class="hidden lg:flex" v-if="counter.language==2">Log out</h1></router-link></button></div>
       </div>
@@ -88,7 +90,7 @@
           <div v-on:click="counter.showDoimatkhau(); counter.showDangnhap(); " class="flex items-center justify-center text-[13px]"><a class="text-slate-800 dark:text-gray-300 hover:text-[15px]  underline font-medium antialiased" href="#!"><h1 v-if="counter.language==1">Quên mật khẩu ?</h1><h1 v-if="counter.language==2">Forgot password ?</h1></a></div>
         </div>
         <div v-show="counter.showcaptcha.so==1" v-on:click="rendercaptchadangnhap(); counter.showcaptcha.so=2;"  id="submit-btn" class=" font-bold text-[14px] " ><button  class=" py-1.5 bg-sky-600  text-white  uppercase rounded hover:bg-sky-500   duration-100 w-full " type="button"><h1 v-if="counter.language==1">Đăng nhập</h1><h1 v-if="counter.language==2">Log in</h1></button></div>
-        <div v-show="counter.showcaptcha.so==2" v-on:click="counter.dangnhaptaikhoanvataocookie();"  id="submit-btn" class=" font-bold text-[14px] " ><button  class=" py-1.5 bg-sky-600  text-white  uppercase rounded hover:bg-sky-500   duration-100 w-full " type="button"><h1 v-if="counter.language==1">Đăng nhập</h1><h1 v-if="counter.language==2">Log in</h1></button></div>
+        <div v-show="counter.showcaptcha.so==2" v-on:click="counter.dangnhaptaikhoanvataocookie();"  id="submit-btn" class=" font-bold text-[14px] " ><button  class=" py-1.5 bg-sky-600  text-white  uppercase rounded hover:bg-sky-500 duration-100 w-full " type="button"><h1 v-if="counter.language==1">Đăng nhập</h1><h1 v-if="counter.language==2">Log in</h1></button></div>
       </div>
       <!-- Form register -->
       <div class="flex flex-col justify-evenly h-full " v-bind:class="{'hidden': counter.opendangki != 2, 'block': counter.opendangki == 2}">
@@ -177,6 +179,37 @@
           <!-- <div v-on:click="counter.openDangki(1); counter.openBgdangki(1); counter.openDangkithanhcong(1);" class=" flex items-center justify-center text-[14px] mx-5 mt-3.5 font-bold bg-sky-600 dark:bg-yellow-300 h-[33px] w-[100px] rounded hover:bg-orange-600 dark:hover:bg-lime-400 cussor-pointer"><button class=" text-white dark:text-blue-700 uppercase rounded duration-100" type="button">Đăng nhập</button></div> -->
         </div>
     </div>
+  </div>
+
+  <!-- < Bảng điền mật khẩu cấp 2> -->
+  <div v-if="counter.showbangmatkhaucap2==2" class=" flex opacity-50 fixed inset-0 z-40 bg-black dark:bg-gray-300 dark:opacity-30 cursor-pointer" v-on:click="counter.showbangmatkhaucap2=1" ></div>
+  <div v-if="counter.showbangmatkhaucap2==2" class="fixed inset-0 z-50 flex flex-col   items-center shadow-md text-sky-600  rounded-3xl bg-white dark:bg-slate-900  object-cover w-[350px] h-[200px] mx-auto my-auto px-2 pt-2 ">
+    <div class="text-[22px] font-semibold">
+      <h1 v-if="counter.language==1">Nhập mật khẩu cấp 2</h1>
+      <h1 v-if="counter.language==2">Enter the level 2 password</h1>
+    </div>
+    <div class="text-[15px] font-medium text-lime-600">
+      <h1 v-if="counter.language==1">Mật khẩu cấp 2 đã được gửi vào Email của bạn</h1>
+      <h1 v-if="counter.language==2">Level 2 password has been sent to your Email</h1>
+    </div>
+    <div class="mt-3 flex flex-col justify-evenly gap-1 text-[15px] w-full h-full mb-4">
+      <input type="number" v-model="counter.Password_Level_2" class=" w-full px-3 py-1.5 text-center bg-white dark:bg-slate-800 dark:text-gray-300 rounded border-solid border-2 border-sky-600 outline-none font-medium antialiased"/>
+      <div v-if="counter.thongbaoloimatkhaucap2.so==2" class="text-red-600 flex justify-center ">
+        <h1 v-if="counter.language==1">{{ counter.thongbaoloimatkhaucap2.thongbao['Error message'] }}</h1>
+        <h1 v-if="counter.language==2">{{ counter.thongbaoloimatkhaucap2.thongbao['Error message English'] }}</h1>
+      </div>
+      <button v-on:click="counter.getCookievadangnhaptaikhoan_cap2();" class="py-1.5 mt-2 bg-sky-600  text-white  uppercase rounded hover:bg-sky-500 duration-100 w-full font-semibold "><h1 v-if="counter.language==1">Tiếp tục Đăng nhập</h1><h1 v-if="counter.language==2">Continue Log in</h1></button>
+    </div>
+  </div>
+
+  <!-- < Bảng loading mk cap 2> -->
+  <div v-if="counter.showbangloadingmatkhaucap2==2" class=" flex opacity-50 fixed inset-0 z-40 bg-black dark:bg-gray-300 dark:opacity-30 cursor-pointer" v-on:click="counter.showbangloadingmatkhaucap2=1" ></div>
+  <div v-if="counter.showbangloadingmatkhaucap2==2" class="fixed inset-0 z-50 flex flex-col justify-evenly items-center shadow-md text-sky-600  rounded-3xl bg-white dark:bg-slate-900  object-cover w-[350px] h-[100px] mx-auto my-auto px-2 ">
+    <div class="text-[16px] font-semibold">
+      <h1 v-if="counter.language==1">Đang gửi mật khẩu cấp 2 về Email của bạn</h1>
+      <h1 v-if="counter.language==2">Sending 2nd level password to your Email</h1>
+    </div>
+    <div   class="text-neutral-800 dark:text-neutral-200 gap-5 justify-center items-center"><hollow-dots-spinner :animation-duration="1000" :dot-size="12" :dots-num="3" :color="'#0891b2'"/></div>
   </div>
 
   <!-- II.Bảng lấy lại mật khẩu -->
@@ -323,6 +356,7 @@
 import { useCounterStore } from '@/stores/counter';
 import axios from 'axios';
 import VueCookies from 'vue-cookies'
+import {AtomSpinner,FulfillingSquareSpinner,HalfCircleSpinner,TrinityRingsSpinner,HollowDotsSpinner} from 'epic-spinners'
 
 
 export default {
@@ -366,7 +400,11 @@ export default {
   mounted:function(){
     this.counter.getCookievadangnhaptaikhoan();
     this.counter.dataAdmin();
-  }
+    this.counter.CryptoInfor();
+  },
+  components: {
+    AtomSpinner,FulfillingSquareSpinner,HalfCircleSpinner,TrinityRingsSpinner,HollowDotsSpinner
+    }
 
 }
 </script> 

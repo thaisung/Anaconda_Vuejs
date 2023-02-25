@@ -4,7 +4,7 @@
           <div class="flex  h-full  bg-stone-200 dark:bg-slate-800 items-center rounded-t justify-between py-2 px-2 ">
             <div class="flex  gap-1  items-center justify-center">
                 <div class="flex h-[50px] w-[50px] items-center justify-center text object-scale-down overflow-hidden"><img  alt="Image" class="bg-white rounded" :src ="counter.URLServer+item.Avatar" /></div>
-                <div class="flex h-[50px]  items-center  text-[22px] text-sky-600 font-semibold antialiased"><h1>{{ item.Name }}</h1></div>
+                <div class="flex h-[50px]  items-center  text-[22px] text-sky-600 font-semibold antialiased"><h1 v-if="counter.language==1">{{ item.Name }}</h1><h1 v-if="counter.language==2">{{ item.Name_English }}</h1></div>
             </div>
             <div class="flex justify-center items-center h-full   text-sky-600 text-[15px] sm:text-[16px]  font-semibold antialiased gap-1 ">
                 <div class="lg:flex w-[150px] gap-1 items-center justify-center bg-gray-300 dark:bg-slate-900 rounded-xl py-3 shadow-inner hidden"><div class="flex text-justify items-center"><font-awesome-icon icon="fa-solid fa-circle-info" /></div><div class="flex text-justify items-center"><h1 v-if="counter.language==1">Thông tin</h1><h1 v-if="counter.language==2">Information</h1></div></div>
@@ -15,7 +15,7 @@
             </div>
           </div>
           <div v-for="iten in item.Categoryy" class="flex  justify-between bg-stone-200 dark:bg-slate-800 min-h-[55px] items-center text-[17px]   font-medium antialiased border-t-2 border-white dark:border-slate-900 px-2 ">
-            <div class="flex dark:text-white "><h1>{{iten.Name}}</h1></div>
+            <div class="flex dark:text-white "><h1 v-if="counter.language==1">{{iten.Name}}</h1><h1 v-if="counter.language==2">{{iten.Name_English}}</h1></div>
             <div class="flex  text-[15px] items-center  sm:pb-0 gap-1">
                 <div v-on:click="counter.showBangthongtin(); counter.openInformation(iten.id); counter.openImage(item.id)" class="lg:flex hidden w-[150px] justify-center "><button type="button" class=" text-[18px] text-sky-600 hover:text-sky-500"><font-awesome-icon icon="fa-solid fa-circle-info" /></button></div>
                 <div class="sm:flex hidden w-[150px] justify-center items-center "><div class="rounded"><img class="w-[40px] rounded" :src="counter.URLServer+iten.Nation"/></div></div>
@@ -38,7 +38,7 @@
       <!--header-->
       <div v-for="item in counter.items" class="flex bg-gray-100 dark:bg-slate-800 dark:border-none border-solid border-2 border-gray-200 shadow-inner rounded-t-2xl rounded-b  items-center px-2 py-2 w-full" v-bind:class="{'hidden': counter.openimage !== item.id, 'block': counter.openimage === item.id}">
           <div class="flex  min-w-[50px] max-w-[50px] h-[50px] items-center justify-center text object-scale-down overflow-hidden " v-bind:class="{'hidden': counter.openimage !== item.id, 'block': counter.openimage === item.id}" ><img alt="Image" class="bg-white rounded " :src="counter.URLServer+item.Avatar" /></div>
-          <div  v-for="iten in item.Categoryy" class="flex w-full h-[40px] items-center text-[17px]  border-2 border-sky-600 py-2 rounded px-16 ml-2 w-full justify-center " v-bind:class="{'hidden': counter.openinformation !== iten.id, 'block': counter.openinformation === iten.id}"><h1>{{iten.Name}}</h1></div>
+          <div  v-for="iten in item.Categoryy" class="flex w-full h-[40px] items-center text-[17px]  border-2 border-sky-600 py-2 rounded px-16 ml-2 w-full justify-center " v-bind:class="{'hidden': counter.openinformation !== iten.id, 'block': counter.openinformation === iten.id}"><h1 v-if="counter.language==1">{{iten.Name}}</h1><h1 v-if="counter.language==2">{{iten.Name_English}}</h1></div>
       </div>
       <!--body-->
       <div class=" flex flex-col  items-center justify-center rounded-b-2xl rounded-t bg-gray-100 dark:bg-transparent dark:border-none border-solid border-2 border-gray-200 shadow-inner  font-medium px-2 py-2">
@@ -58,7 +58,7 @@
     <!--header-->
     <div v-for="item in counter.items" class="flex bg-gray-100 border-solid border-2 border-gray-200 dark:bg-slate-800 dark:border-none shadow-inner rounded-t-2xl rounded-b  py-2 items-center w-full justify-between px-2 " v-bind:class="{'hidden': counter.openimage !== item.id, 'block': counter.openimage === item.id}">
       <div class="flex min-w-[50px] max-w-[50px] h-[50px]  items-center justify-center text object-scale-down overflow-hidden "><img alt="Image" class="bg-white rounded " :src="counter.URLServer+item.Avatar" /></div>
-      <div v-for="iten in item.Categoryy" class="flex w-full h-[40px]  items-center text-[17px]  border-2 border-sky-600 font-semibold rounded ml-2  justify-center font-medium" v-bind:class="{'hidden': counter.openinformation !== iten.id, 'block': counter.openinformation === iten.id}" ><h1>{{iten.Name}}</h1></div>
+      <div v-for="iten in item.Categoryy" class="flex w-full h-[40px]  items-center text-[17px]  border-2 border-sky-600 font-semibold rounded ml-2  justify-center font-medium" v-bind:class="{'hidden': counter.openinformation !== iten.id, 'block': counter.openinformation === iten.id}" ><h1 v-if="counter.language==1">{{iten.Name}}</h1><h1 v-if="counter.language==2">{{iten.Name_English}}</h1></div>
     </div>
     <!--body-->
     <div v-for="item in counter.items" class=" flex flex-col  items-center justify-center rounded bg-gray-100 dark:bg-transparent dark:border-none border-solid border-2 border-gray-200 mt-2 px-2 font-medium" v-bind:class="{'hidden': counter.openimage !== item.id, 'block': counter.openimage === item.id}">

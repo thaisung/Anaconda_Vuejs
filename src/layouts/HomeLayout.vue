@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen min-w-screen bg-gray-200 dark:bg-slate-800 relative" >
+    <div class="min-h-screen min-w-screen bg-gray-200 dark:bg-slate-800 relative h-full" >
       <div class="flex flex-col min-h-full max-w-[1200px] mx-auto rounded gap-2 bg-transparent  " >
         <hea-der />
         <run-text />

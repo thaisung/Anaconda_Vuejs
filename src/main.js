@@ -19,9 +19,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
 import {faEnvelope,faSquarePhone,faGlobe,faSun,faUserNinja,faWallet, faMoon,faCircleCheck,faArrowsDownToLine,faIdBadge,faUserSecret,faKey,faHouse,faClockRotateLeft,faCircleInfo,faTags,faShop,faSackDollar,faEye,faCopy,faLink,faCreditCard,faCheck,
-        faBuildingColumns,faMoneyBills,faMessage,faBell,faRightFromBracket,faUser,faSquarePlus,faLanguage,faShieldHalved,faCalendarCheck,faClock,faHeadset,faMagnifyingGlass,faCaretRight,faCaretLeft,faFileLines,faArrowRightLong,faArrowLeftLong} from '@fortawesome/free-solid-svg-icons'
+        faBuildingColumns,faC,faMoneyBills,faMessage,faBell,faRightFromBracket,faUser,faSquarePlus,faLanguage,faShieldHalved,faCalendarCheck,faClock,faHeadset,faMagnifyingGlass,faCaretRight,faCaretLeft,faFileLines,faArrowRightLong,faArrowLeftLong,faCaretDown,} from '@fortawesome/free-solid-svg-icons'
 
-import {faSquareFacebook,faTelegram,faTiktok,faGoogleWallet} from '@fortawesome/free-brands-svg-icons'
+import {faSquareFacebook,faTelegram,faTiktok,faGoogleWallet,faPython,faJava,faPhp,faJs,faHtml5,faCss3,} from '@fortawesome/free-brands-svg-icons'
 
 import {faHandPointRight,} from '@fortawesome/free-regular-svg-icons'
 
@@ -37,7 +37,7 @@ library.add(
             faCircleInfo,faTags,faShop,faSackDollar,faEye,faCopy,
             faLink,faCreditCard,faBuildingColumns,faMoneyBills,faMessage,faBell,faCheck,faRightFromBracket,faUser,faSquarePlus,
             faLanguage,faShieldHalved,faCalendarCheck,faClock,faHeadset,faHandPointRight,faMagnifyingGlass,faCaretRight,faCaretLeft,faFileLines,
-            faArrowRightLong,faArrowLeftLong,
+            faArrowRightLong,faArrowLeftLong,faPython,faJava,faPhp,faJs,faHtml5,faCss3,faCaretDown,faC,
             )
 
 const app = createApp(App);

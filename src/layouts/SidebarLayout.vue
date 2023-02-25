@@ -1,13 +1,13 @@
 <template>
-  <div class="min-h-screen min-w-screen bg-gray-200 dark:bg-slate-800  ">
+  <div class="h-full min-w-screen bg-gray-200 dark:bg-slate-800 ">
     <div class="flex flex-col min-h-full max-w-[1200px] mx-auto rounded gap-2 bg-transparent " >
       <hea-der />
       <run-text />
       <logo-banner />
       <tab-page />
-      <div class="flex flex-col sm:flex-row  bg-white dark:bg-slate-900 rounded drop-shadow-md py-2 px-2 gap-2 font-medium ">
+      <div class="flex flex-col lg:flex-row  bg-white dark:bg-slate-900 rounded drop-shadow-md py-2 px-2 gap-2 font-medium h-full grow">
         <side-bar/>
-        <router-view class=" flex overflow-x-auto  scroll-pl-6 snap-x "/>
+        <router-view class=" flex overflow-x-auto  scroll-pl-6 snap-x grow h-full"/>
       </div>
       <foo-ter />
     </div>

@@ -1,5 +1,5 @@
 <template>
-    <div v-if="typeof counter.openthongtincanhan.username == 'string'" class=" flex flex-col scroll-ml-6 snap-start  items-center gap-5 justify-center bg-gray-200 rounded shadow-inner   text-sky-900 dark:text-sky-400 dark:bg-slate-900 dark:border-sky-400 dark:border-2 w-full ">
+    <div v-if="typeof counter.openthongtincanhan.username == 'string'" class=" flex flex-col scroll-ml-6 snap-start  items-center gap-5 justify-start bg-gray-200 rounded shadow-inner   text-sky-900 dark:text-sky-400 dark:bg-slate-900 dark:border-sky-400 dark:border-2 w-full ">
         <div class="text-[25px] font-bold mt-2"><h1 v-if="counter.language==1">Đổi mật khẩu</h1><h1 v-if="counter.language==2">Change Password</h1></div>
         <div class="flex flex-col  w-[350px] sm:w-[700px]">
             <div class="flex gap-1 py-3 border-b-2 border-sky-900 dark:border-slate-800">

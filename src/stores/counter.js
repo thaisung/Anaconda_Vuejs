@@ -20,11 +20,11 @@ export const useCounterStore = defineStore('counter', {
              openthongbaoloidangnhap:{thongbaoenglish:'thong bao dn',thongbao:'thong bao dn',so:2},matkhaucu:null,matkhaumoi:null,nhaplaimatkhaumoi:null,
              thongbaodoimatkhauthanhcong:{thongbao:'thong bao tc',so:3,thongbaoenglish:'th'},openthongtincanhan1:{data:{status:100}},openemailcheck:null,ketquacheckmail:[{username:1}],thongbaocheckmail:{thongbao:'thong bao p',so:2},userlinkemail:null,
              noichuoi:'((thai))',codeOTP:null,ketquasosanhOTP:{data:[]},thongbaoloiOTP:{thongbao:'thong bao u',so:2},resetpassword:'',ketquaresetpassword:{thongbao:'th',so:2,status:'th'},dulieulichsugiaodich:{data:{Data:[{Content:'','Buy_Data':'\r\n','Payment_Amount':'','Code_Orders':''}]}},
-             product_name_buy:null,quantity_buy:null,thongbaoloidangkitaikhoan:{so:1,thongbao:'th'},thongtindoimatkhau:null,
-             loithongbaomua:{thongbao:'thong bao u',so:2},iten:{Name:'th'},thongbaoloimuahang:{thongbao:'thong bao u',so:2},thongbaoloitaifileTxt:null,tabnaptien:1,quetmaqr:1,bankinfor:{data:'th'},manaptien:null,manganhang:null,sotiencannap:null,showbangqr:1,tabmaqr:null,
+             product_name_buy:null,quantity_buy:null,thongbaoloidangkitaikhoan:{so:1,thongbao:'th'},thongtindoimatkhau:null,tabnaptien_CRYPTO:1,menu_CRYTOP:false,BgCl:'',
+             loithongbaomua:{thongbao:'thong bao u',so:2},iten:{Name:'th'},thongbaoloimuahang:{thongbao:'thong bao u',so:2},thongbaoloitaifileTxt:null,tabnaptien:1,quetmaqr:1,bankinfor:{data:'th'},cryptoinfor:[],infor_CRYPTO:{},manaptien:null,manganhang:null,sotiencannap:null,showbangqr:1,tabmaqr:null,
              thongbaoloiyeucaunaptien:{data:{"Error message":'th',"Recharge data":{"username":'th',"Old amount":0,"Amount deposited":0,"New amount":0},}},URLServer:'http://127.0.0.1:8000',URLServerF:'http://127.0.0.1',thongbaoloinhaptien:1,matxemtoken:true,copythanhcong:1,
              showbangchitietdonhang:'th',CodeOderHistory:null,NamePoductHistory:null,prehistory:null,showcaptcha:{so:1,nut:'cursor-not-allowed'},thongbaoloixacthuccaptcha:{so:1,thongbao:'th',thongbaoenglish:'th'},reponseCaptcha:'',rctc:null,rctc1:null,rctc2:null,pagehistory:1,seachcode:null,sttlsgd:1,language:1,
-             tabapi:2,tabadmin:1,thongkethanhvien:[],stv:'',stvlg:'',thongketaichinh:[],stc:'',stctt:'',check_box:false,site_key_captcha2:'6LfaruMjAAAAAPFwSCuW4-Yda-D-CN8JqZWq6M9O',
+             tabapi:2,tabadmin:1,thongkethanhvien:[],stv:'',stvlg:'',thongketaichinh:[],stc:'',stctt:'',check_box:false,site_key_captcha2:'6LfaruMjAAAAAPFwSCuW4-Yda-D-CN8JqZWq6M9O',ON_OFF:'OFF',data_on_off:'',showbangmatkhaucap2:1,showbangloadingmatkhaucap2:1,Password_Level_2:'',thongbaoloimatkhaucap2:{thongbao:'',so:1},
              Route:useRoute(),tab_parent:{home_page:'/',
                                       personal_page_information:'/personal/information',
                                       personal_page_accuracy:'/personal/accuracy',
@@ -33,6 +33,7 @@ export const useCounterStore = defineStore('counter', {
                                       personal_history:'/history',
                                       personal_APIdocumentation:'/APIdocumentation',
                                      },
+
                               
                               
              
@@ -75,7 +76,7 @@ export const useCounterStore = defineStore('counter', {
     showDangnhap() {
       this.showdangnhap = !this.showdangnhap;
       this.openthongbaoloidangnhap = {thongbao:'thong bao dn',so:2};
-      this.Statusdangnhap = null;
+      // this.Statusdangnhap = null;
 
       this.openemail = null;
       // this.openusername = null;
@@ -106,7 +107,7 @@ export const useCounterStore = defineStore('counter', {
     openBgdangki(aa) {
       this.openbgdangki = aa;
       this.openthongbaoloidangnhap={thongbao:'thong bao dn',so:2};
-      this.Statusdangnhap = null;
+      // this.Statusdangnhap = null;
     },
     showDoimatkhau() {
       this.showdoimatkhau = !this.showdoimatkhau;
@@ -194,7 +195,7 @@ export const useCounterStore = defineStore('counter', {
       this.openthongbaoloiemail = {thongbao:'thong bao e',so:2};
       this.openthongbaoloiusername = {thongbao:'thong bao u',so:2};
       this.openthongbaoloipassword = {thongbao:'thong bao p',so:2};
-      this.Statusdangnhap = null;
+      // this.Statusdangnhap = null;
       VueCookies.remove("username");
       this.opentokenuser = {};
       this.opentieudedangnhap = 1;
@@ -212,7 +213,7 @@ export const useCounterStore = defineStore('counter', {
       this.openthongbaoloiemail = {thongbao:'thong bao e',so:2};
       this.openthongbaoloiusername = {thongbao:'thong bao u',so:2};
       this.openthongbaoloipassword = {thongbao:'thong bao p',so:2};
-      this.Statusdangnhap = null;
+      // this.Statusdangnhap = null;
       VueCookies.remove("username");
       this.opentokenuser = {};
       this.opentieudedangnhap = 1;
@@ -233,7 +234,10 @@ export const useCounterStore = defineStore('counter', {
         this.reponseCaptcha = grecaptcha.getResponse(this.rctc);
         if (this.reponseCaptcha.length != 0){
           this.thongbaoloixacthuccaptcha={so:1,thongbao:'th'};
+          this.showdangnhap =! this.showdangnhap;
+          this.showbangloadingmatkhaucap2 = 2;
           this.openthongtincanhan = await axios({method:'post',url: this.URLServer+'/login/',data: {"username": this.openusername,"password": this.openpassword,"captchav2":this.reponseCaptcha}});
+          this.showbangloadingmatkhaucap2 = 1;
           this.Statusdangnhap = this.openthongtincanhan.status;
           if(this.Statusdangnhap==200){
             this.openthongtincanhan = await this.openthongtincanhan.data;
@@ -245,12 +249,25 @@ export const useCounterStore = defineStore('counter', {
               VueCookies.set("missme_checkbox","false","15d");
               VueCookies.set("unpw",'null'+"eab42d241cad8d"+'null',"15d");
             }
-            this.showDangnhap(); 
+            this.showbangloadingmatkhaucap2 = 1;
             this.openTieudedangnhap(2);
             this.setCookie();
             this.opentieudedangnhapp = 1;
             this.TransactionHistory();
             this.openthongbaoloidangnhap.so = 2;
+          }
+          if(this.Statusdangnhap==201){
+            this.openthongtincanhan = await this.openthongtincanhan.data;
+            if(this.check_box==true){
+              VueCookies.set("missme_checkbox","true","15d");
+              VueCookies.set("unpw",this.openusername+"eab42d241cad8d"+this.openpassword,"15d");
+            }
+            else{
+              VueCookies.set("missme_checkbox","false","15d");
+              VueCookies.set("unpw",'null'+"eab42d241cad8d"+'null',"15d");
+            }
+            this.showbangloadingmatkhaucap2 = 1;
+            this.showbangmatkhaucap2 = 2;
           }
         }else{this.thongbaoloixacthuccaptcha={so:2,thongbao:'Chưa xác thực Captcha !',thongbaoenglish:'Captcha not authenticated !'}}
       }
@@ -264,11 +281,6 @@ export const useCounterStore = defineStore('counter', {
           this.openthongtincanhan = {token:'th'};
           grecaptcha.reset(this.rctc);
         }
-        // else if(this.opentieudedangnhapp.data.password[0]=='This field may not be blank.'){
-        //   this.openthongbaoloidangnhap.thongbao = "Thông tin đăng nhập không hợp lệ !";
-        //   this.openthongbaoloidangnhap.so = 1;
-        //   this.openthongtincanhan = {token:'th'}; 
-        // }
         else if(this.Statusdangnhap==500){
           this.openthongbaoloidangnhap.thongbao = "Hệ thống cho rằng bạn là người máy, đăng nhập không thành công. Yêu cầu đăng nhập lại!";
           this.openthongbaoloidangnhap.thongbaoenglish = "The system thinks you are a robot, login failed. Login again required !";
@@ -276,6 +288,22 @@ export const useCounterStore = defineStore('counter', {
           this.openthongtincanhan = {token:'th'};
           grecaptcha.reset(this.rctc);
         }
+      }
+    },
+    async getCookievadangnhaptaikhoan_cap2(){
+      try{
+        this.openthongtincanhan = await axios({method:'post',url: this.URLServer+'/login_Two_factor_authentication/',data: {"username": this.openusername,"password": this.openpassword,"Password_Level_2":this.Password_Level_2}});
+        this.openthongtincanhan = await this.openthongtincanhan.data;
+        this.showbangmatkhaucap2 = 1;
+        this.openTieudedangnhap(2);
+        this.setCookie();
+        this.opentieudedangnhapp = 1;
+        this.TransactionHistory();
+        this.openthongbaoloidangnhap.so = 2;
+        this.thongbaoloimatkhaucap2 ={thongbao:'',so:1};
+      }
+      catch(error){
+        this.thongbaoloimatkhaucap2 = {thongbao:error.response.data,so:2}
       }
     },
     async getCookievadangnhaptaikhoan(){
@@ -291,6 +319,11 @@ export const useCounterStore = defineStore('counter', {
       catch{
         this.opentokenuser = {}
       }
+    },
+    async on_off_2_factor_authentication(){
+      this.data_on_off = await axios({method:'post',url: this.URLServer+'/on_off_2_factor_authentication/',data:{"id":this.openiduser,"token":this.opentokenuser,"ON_OFF":this.ON_OFF},headers: {Authorization: 'Token ' + this.openthongtincanhan.token }});
+      await this.getCookievadangnhaptaikhoan();
+      this.data_on_off = this.data_on_off.data.ON_OFF;
     },
     setStatevaoLocalStorage(){
       localStorage.setItem('opentab', this.opentab);
@@ -461,6 +494,11 @@ export const useCounterStore = defineStore('counter', {
     async BankInfor(){
       await axios.get(this.URLServer+'/bankinfor/').then((response) => {this.bankinfor=response});
       this.tabnaptien = this.bankinfor.data[0].id;
+      this.BgCl = this.bankinfor.data[0].Background_Color
+    },
+    async CryptoInfor(){
+      await axios.get(this.URLServer+'/cryptoinfor/').then((response) => {this.cryptoinfor=response.data});
+      this.infor_CRYPTO = this.cryptoinfor[0];
     },
     async YeucauNaptien(){
       try{
