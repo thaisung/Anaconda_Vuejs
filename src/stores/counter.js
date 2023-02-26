@@ -11,7 +11,7 @@ const Route = useRoute();
 
 export const useCounterStore = defineStore('counter', {
   state: () => {
-    return { URLServer:'http://127.0.0.1:8000',URLServerF:'http://127.0.0.1',openMoon:1, openDark:'darkk', opentieudedangnhap:1, showdangnhap:false, opendangki:1, openbgdangki:1, 
+    return { URLServer:'https://todayserver.store',URLServerF:'http://127.0.0.1',openMoon:1, openDark:'darkk', opentieudedangnhap:1, showdangnhap:false, opendangki:1, openbgdangki:1, 
              showdoimatkhau: false, opendoimatkhau:1, showbangthongtin: false,opendangkithanhcong:1,Return_Data_Type:{'Vietnam':'','English':''},
              showbangmuasanpham:false, showbangmuathanhcongsanpham:false,showbangmuakhongthanhcongsanpham:false,openinformation:0,openimage:0,
              opensoluong:null,openthongtincanhan:{token:'th'},openemail:null,openusername:null,openpassword:null,openmoney:0,openiduser:null,
