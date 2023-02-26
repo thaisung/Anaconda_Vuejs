@@ -5,7 +5,7 @@
       <run-text />
       <logo-banner />
       <tab-page />
-      <div class="flex flex-col lg:flex-row  bg-white dark:bg-slate-900 rounded drop-shadow-md py-2 px-2 gap-2 font-medium h-full grow">
+      <div class="flex flex-col lg:flex-row  bg-white dark:bg-slate-900 rounded drop-shadow-md py-2 px-2 gap-2 font-medium h-full grow shrink-0 ">
         <side-bar/>
         <router-view class=" flex overflow-x-auto  scroll-pl-6 snap-x grow h-full"/>
       </div>
