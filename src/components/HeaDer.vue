@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:fixed z-20 lg:inset-x-0 md:flex-row md:items-center max-w-[1200px] w-full mx-auto md:min-h-[46px] text-slate-800 dark:text-gray-200 rounded justify-between py-1 text-[22px]  gap-2 bg-white dark:bg-slate-900 drop-shadow-md ">
+  <div class="flex flex-col pb-2 lg:pb-0 lg:fixed z-20 lg:inset-x-0 md:flex-row md:items-center max-w-[1200px] w-full mx-auto md:min-h-[46px] text-slate-800 dark:text-gray-200 rounded justify-between py-1 text-[22px]  gap-2 bg-white dark:bg-slate-900 drop-shadow-md ">
     <div v-for="admin in counter.admins" class="flex flex-row gap-2 justify-center sm:ml-2 font-medium antialiased">
       <div class="flex justify-center items-center gap-0.5"><div><font-awesome-icon icon="fa-solid fa-envelope" /></div><div><h1 class="text-[17px]">{{ admin.Email }}</h1></div></div>
       <div class="flex justify-center items-center gap-0.5"><div><font-awesome-icon icon="fa-solid fa-square-phone" /></div><div><h1 class="text-[17px]">{{ admin.Phone }}</h1></div></div>
