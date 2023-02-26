@@ -22,7 +22,7 @@ export const useCounterStore = defineStore('counter', {
              noichuoi:'((thai))',codeOTP:null,ketquasosanhOTP:{data:[]},thongbaoloiOTP:{thongbao:'thong bao u',so:2},resetpassword:'',ketquaresetpassword:{thongbao:'th',so:2,status:'th'},dulieulichsugiaodich:{data:{Data:[{Content:'','Buy_Data':'\r\n','Payment_Amount':'','Code_Orders':''}]}},
              product_name_buy:null,quantity_buy:null,thongbaoloidangkitaikhoan:{so:1,thongbao:'th'},thongtindoimatkhau:null,tabnaptien_CRYPTO:1,menu_CRYTOP:false,BgCl:'',
              loithongbaomua:{thongbao:'thong bao u',so:2},iten:{Name:'th'},thongbaoloimuahang:{thongbao:'thong bao u',so:2},thongbaoloitaifileTxt:null,tabnaptien:1,quetmaqr:1,bankinfor:{data:'th'},cryptoinfor:[],infor_CRYPTO:{},manaptien:null,manganhang:null,sotiencannap:null,showbangqr:1,tabmaqr:null,
-             thongbaoloiyeucaunaptien:{data:{"Error message":'th',"Recharge data":{"username":'th',"Old amount":0,"Amount deposited":0,"New amount":0},}},thongbaoloinhaptien:1,matxemtoken:true,copythanhcong:1,
+             thongbaoloiyeucaunaptien:{data:{"Error message":'th',"Error message English":'th',"Recharge data":{"username":'th',"Old amount":0,"Amount deposited":0,"New amount":0},}},thongbaoloinhaptien:1,matxemtoken:true,copythanhcong:1,
              showbangchitietdonhang:'th',CodeOderHistory:null,NamePoductHistory:null,prehistory:null,showcaptcha:{so:1,nut:'cursor-not-allowed'},thongbaoloixacthuccaptcha:{so:1,thongbao:'th',thongbaoenglish:'th'},reponseCaptcha:'',rctc:null,rctc1:null,rctc2:null,pagehistory:1,seachcode:null,sttlsgd:1,language:1,
              tabapi:2,tabadmin:1,thongkethanhvien:[],stv:'',stvlg:'',thongketaichinh:[],stc:'',stctt:'',check_box:false,site_key_captcha2:'6LfaruMjAAAAAPFwSCuW4-Yda-D-CN8JqZWq6M9O',ON_OFF:'OFF',data_on_off:'',showbangmatkhaucap2:1,showbangloadingmatkhaucap2:1,Password_Level_2:'',thongbaoloimatkhaucap2:{thongbao:'',so:1},
              Route:useRoute(),tab_parent:{home_page:'/',
@@ -509,8 +509,9 @@ export const useCounterStore = defineStore('counter', {
         this.getCookievadangnhaptaikhoan();
       }
       catch (error) {
-        this.thongbaoloiyeucaunaptien = {data:{"Error message":'th',"Recharge data":{"username":'th',"Old amount":0,"Amount deposited":0,"New amount":0}}}
+        this.thongbaoloiyeucaunaptien = {data:{"Error message":'th',"Error message English":'th',"Recharge data":{"username":'th',"Old amount":0,"Amount deposited":0,"New amount":0}}}
         this.thongbaoloiyeucaunaptien.data['Error message'] = error.response.data['Error message'];
+        this.thongbaoloiyeucaunaptien.data['Error message English'] = error.response.data['Error message English'];
         this.thongbaoloinhaptien = 2;
         this.showbangqr = 1;
       }      

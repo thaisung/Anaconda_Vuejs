@@ -1,7 +1,7 @@
 <template>
     <div class=" flex flex-col grow  bg-gray-200 rounded shadow-inner items-center  text-sky-900 w-full min-h-[330px]  dark:bg-transparent  dark:text-yellow-300 dark:border-2 dark:border-sky-400 ">
         <div class="flex flex-col sm:flex-row sm:gap-5 gap-1 font-bold text-[14px] my-4 " >
-            <div v-for="Bank_Name in counter.bankinfor.data" class="rounded py-1 px-2 cursor-pointer " :style="{'color':Bank_Name.Background_Color}" v-bind:class="{'bg-white dark:bg-slate-200 text-[16px]': counter.tabnaptien == Bank_Name.id && counter.tabnaptien_CRYPTO==1}" v-on:click="counter.tabnaptien=Bank_Name.id; counter.tabnaptien_CRYPTO=1; counter.menu_CRYTOP=false; counter.BgCl= Bank_Name.Background_Color"><h1>{{ Bank_Name.Short_Name }}</h1></div>
+            <div v-for="Bank_Name in counter.bankinfor.data" class="rounded py-1 px-2 cursor-pointer " :style="{'color':Bank_Name.Background_Color}" v-bind:class="{'bg-white dark:bg-slate-200 text-[16px]': counter.tabnaptien == Bank_Name.id && counter.tabnaptien_CRYPTO==1}" v-on:click="counter.tabnaptien=Bank_Name.id; counter.tabnaptien_CRYPTO=1; counter.menu_CRYTOP=false; counter.BgCl= Bank_Name.Background_Color; counter.tabmaqr=Bank_Name.id;"><h1>{{ Bank_Name.Short_Name }}</h1></div>
             <div class=" flex flex-col relative items-center gap-1 rounded py-1 px-2 cursor-pointer " v-bind:class="{'bg-white dark:bg-slate-200 text-[16px] text-lime-700': counter.tabnaptien_CRYPTO == 2,}" v-on:click="counter.tabnaptien_CRYPTO=2">
               <div class="flex gap-1">
                 <h1>CRYPTO</h1>
@@ -36,7 +36,10 @@
                   id="exampleFormControlInput1"
                   placeholder="" min="0" v-model="counter.sotiencannap" v-on:click="counter.Manaptien(Bank_NameS.Short_Name);"/>
                 <div :style="'background-color:' + Bank_NameS.Background_Color" class="flex justify-center px-2 text-white items-center text-[15px] rounded-r"><h1>VND</h1></div></div>
-                <div class=" text-red-600 mt-1 text-[13px]" v-show="counter.thongbaoloinhaptien ==2"><h1>{{counter.thongbaoloiyeucaunaptien.data['Error message']}}</h1></div>
+                <div class=" text-red-600 mt-1 text-[13px]" v-show="counter.thongbaoloinhaptien ==2">
+                  <h1 v-if="counter.language==1">{{counter.thongbaoloiyeucaunaptien.data['Error message']}}</h1>
+                  <h1 v-if="counter.language==2">{{counter.thongbaoloiyeucaunaptien.data['Error message English']}}</h1>
+                </div>
                 <div :style="{'background-color':counter.BgCl}"  @mouseover="counter.BgCl='#0ea5e9'" @mouseout="counter.BgCl=Bank_NameS.Background_Color" class='flex justify-center rounded my-4 py-1 px-2 text-[20px] text-white' v-on:click="counter.YeucauNaptien(); counter.showbangqr=2; counter.tabmaqr=Bank_Name.id"><button><h1 v-if="counter.language==1">Thanh toán</h1><h1 v-if="counter.language==2">Pay</h1></button></div>
               </div>
             </div>

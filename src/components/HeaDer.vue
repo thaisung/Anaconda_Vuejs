@@ -291,7 +291,7 @@
 
   <!-- Bảng quét mã QR để thanh toán -->
   <div v-show="counter.showbangqr == 2" class=" flex opacity-60 fixed inset-0 z-20 bg-black dark:bg-gray-300 dark:opacity-30 cursor-pointer" v-on:click=" counter.Showbangqr (1); counter.Manaptien(); counter.thongbaoloinhaptien=1; counter.sotiencannap=null;" ></div>
-  <div v-show="counter.showbangqr == 2" class=" fixed inset-0 z-30 bg-white dark:bg-slate-900 w-[350px] sm:w-[700px] h-[600px] mx-auto my-auto flex flex-col  rounded drop-shadow-md overflow-auto">
+  <div v-show="counter.showbangqr == 2" class=" fixed inset-0 z-30 bg-white dark:bg-slate-900 w-[350px] sm:w-[700px] h-[620px] mx-auto my-auto flex flex-col  rounded drop-shadow-md overflow-auto">
     <div class="flex flex-col sm:flex-row">
       <div v-show="counter.tabmaqr==Bank_Name.id" v-for="Bank_Name in counter.bankinfor.data" class=" bg-gray-200 dark:bg-slate-800 mx-2 my-2 rounded shadow-inner  flex flex-col items-center sm:w-1/2 sm:mr-1 sm:justify-center ">
         <div class="w-[150px] h-[150px] mt-2"><img  alt="Image" class="" :src = "counter.URLServer + Bank_Name.Avatar" /></div>
@@ -329,9 +329,12 @@
         <div class="mx-1 my-1"><img  alt="Image" class="" :src ="Bank_Name.QR_Code_Link + 'accountName='+Bank_Name.Account_Name+'&amount='+counter.sotiencannap+'&addInfo='+counter.manaptien" /></div>
       </div>
     </div>
-    <div class=" flex justify-center items-center font-semibold text-justify text-sky-900 dark:bg-slate-800 dark:text-gray-200 mx-2 mb-2 bg-gray-200 round shadow-inner rounded px-2 py-2"><h1 v-if="counter.language==1">Vui lòng nhập chính xác nội dung chuyển khoản để hệ thống kiểm tra và kích hoạt tự động. Tài khoản của bạn sẽ được cộng tiền sau 1 đến 5 phút.
-      Nếu quá 5p tiền chưa vào tài khoản, bạn vui lòng liên hệ tại fanpage VANTHAI để được hỗ trợ.</h1><h1 v-if="counter.language==2">Pl enter the exact transfer content for the system to check and activate automatically. Your account will be credited in 1 to 5 minutes.
-      If more than 5p money has not been in your account, pl contact VANTHAI fanpage for support.</h1></div>
+    <div class=" flex justify-center items-center font-semibold text-justify text-sky-900 dark:bg-slate-800 dark:text-gray-200 mx-2 mb-2 bg-gray-200 round shadow-inner rounded px-2 py-2 text-[15px]">
+      <h1 v-if="counter.language==1">Vui lòng nhập chính xác nội dung chuyển khoản để hệ thống kiểm tra và kích hoạt tự động. Tài khoản của bạn sẽ được cộng tiền sau 1 đến 5 phút.
+      Nếu quá 5p tiền chưa vào tài khoản, bạn vui lòng liên hệ tại fanpage VANTHAI để được hỗ trợ.</h1>
+      <h1 v-if="counter.language==2">Pl enter the exact transfer content for the system to check and activate automatically. Your account will be credited in 1 to 5 minutes.
+      If more than 5p money has not been in your account, pl contact VANTHAI fanpage for support.</h1>
+    </div>
   </div>
 
   <!-- Bảng thông báo nạp tiền thành công -->
