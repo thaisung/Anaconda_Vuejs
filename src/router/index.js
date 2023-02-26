@@ -67,7 +67,7 @@ const router = createRouter({
       ]
     },
     {
-      path: "/settingAdmin",
+      path: "/StatisticalAdmin/Anaconda",
       name: "settingadmin",
       // redirect: "/settingAdmin",
       component: SettingAdminLayout,
