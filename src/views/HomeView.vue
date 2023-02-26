@@ -65,7 +65,8 @@
       <div class="flex flex-col gap-0.5  py-1  w-full">
         <div class="flex text-[16px] py-2 items-center justify-between border-solid border-b-2 dark:border-slate-800 border-sky-600">
           <div class="flex justify-center mb-1 min-w-[140px]"><h1 v-if="counter.language==1">Số lượng cần mua:</h1><h1 v-if="counter.language==2">Quantity to buy:</h1></div>
-          <div class="flex justify-center w-full " v-for="iten in item.Categoryy" v-on:click="counter.gantenmathang(iten.Name)" v-show="counter.openinformation === iten.id"><input
+          <div class="flex justify-center w-full " v-for="iten in item.Categoryy" v-on:click="counter.gantenmathang(iten.Name); counter.Return_Data_Type={'Vietnam':iten.Return_Data_Type,'English':iten.Return_Data_Type_English};" v-show="counter.openinformation === iten.id">
+            <input
             type="number" 
             class=" w-full text-end bg-transparent rounded  outline-none h-[35px] dark:text-gray-200 text-gray-800"
             id="exampleFormControlInput1"
@@ -97,20 +98,27 @@
       <div class="flex bg-gray-200 rounded shadow-inner justify-center py-2 text-[25px] text-sky-600 font-bold"><h1 v-if="counter.language==1">Bạn đã mua thành công</h1><h1 v-if="counter.language==2">You have successfully purchased</h1></div>
       <div class="flex flex-col gap-1 text-[15px] font-medium w-full h-full mt-3">
       <div class="flex gap-1 justify-center">
-          <div><h1  v-if="counter.language==1">Sản phẩm:</h1><h1  v-if="counter.language==2">Product:</h1></div>
+          <div><h1  v-if="counter.language==1">Sản phẩm :</h1><h1  v-if="counter.language==2">Product :</h1></div>
           <div><h1>{{ counter.thongbaoloimuahang.data['Order details']['Product name buy'] }}</h1></div>
       </div>
       <div  class="flex gap-1 justify-center">
-          <div><h1  v-if="counter.language==1">Số lượng:</h1><h1  v-if="counter.language==2">Quantity:</h1></div>
+          <div><h1  v-if="counter.language==1">Số lượng :</h1><h1  v-if="counter.language==2">Quantity :</h1></div>
           <div><h1>{{ counter.thongbaoloimuahang.data['Order details']['Quantity buy'] }}</h1></div>
       </div>
       <div  class="flex gap-1 justify-center">
-          <div><h1  v-if="counter.language==1">Thành tiền:</h1><h1  v-if="counter.language==2">Into money:</h1></div>
+          <div><h1  v-if="counter.language==1">Thành tiền :</h1><h1  v-if="counter.language==2">Into money :</h1></div>
           <div><h1>{{ counter.thongbaoloimuahang.data['Order details']['Transaction amount'] }}</h1></div>
       </div>
       <div  class="flex gap-1 justify-center">
-          <div><h1  v-if="counter.language==1">Mã đơn hàng:</h1><h1  v-if="counter.language==2">Code orders:</h1></div>
+          <div><h1  v-if="counter.language==1">Mã đơn hàng :</h1><h1  v-if="counter.language==2">Code orders :</h1></div>
           <div><h1>{{ counter.thongbaoloimuahang.data['Order details']['Code orders'] }}</h1></div>
+      </div>
+      <div  class="flex gap-1 justify-start items-center bg-gray-100 rounded text-lime-600 text-[14px] py-3 px-1 shadow-inner overflow-auto ">
+          <div class="shrink-0"><h1  v-if="counter.language==1" class="shrink-0 ">Kiểu dữ liệu trả về :</h1><h1  v-if="counter.language==2" class="shrink-0">Return data type :</h1></div>
+          <div class=" shrink-0">
+            <h1  v-if="counter.language==1">{{ counter.Return_Data_Type.Vietnam }}</h1>
+            <h1  v-if="counter.language==2">{{ counter.Return_Data_Type.English}}</h1>
+          </div>
       </div>
       <div  class="flex gap-1 justify-center  mb-2 w-full h-full mt-2"><pre  id="myPre" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1"><h1 v-for="i in counter.thongbaoloimuahang.data['Order details'].Data">{{ i+'\r\n' }}</h1></pre></div>
       </div>
