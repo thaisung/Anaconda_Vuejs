@@ -15,7 +15,7 @@ export const useCounterStore = defineStore('counter', {
              showdoimatkhau: false, opendoimatkhau:1, showbangthongtin: false,opendangkithanhcong:1,
              showbangmuasanpham:false, showbangmuathanhcongsanpham:false,showbangmuakhongthanhcongsanpham:false,openinformation:0,openimage:0,
              opensoluong:null,openthongtincanhan:{token:'th'},openemail:null,openusername:null,openpassword:null,openmoney:0,openiduser:null,
-             cookie:null,opentokenuser:{},usertokenid:null,items:null,opentieudedangnhapp:1,datauser:null,admins:null,trangthaidangki:{"data":{"email":["e"],"username":["u"],"password":["p"]}},
+             cookie:null,opentokenuser:{},usertokenid:null,items:null,opentieudedangnhapp:1,datauser:null,admins:[{Run_Text:'',Notification:'','Domain_Page':''}],trangthaidangki:{"data":{"email":["e"],"username":["u"],"password":["p"]}},
              openthongbaoloiemail:{thongbao:'thong bao e',so:2},openthongbaoloiusername:{thongbao:'thong bao u',so:2},openthongbaoloipassword:{thongbao:'thong bao p',so:2},Statusdangnhap:'th',
              openthongbaoloidangnhap:{thongbaoenglish:'thong bao dn',thongbao:'thong bao dn',so:2},matkhaucu:null,matkhaumoi:null,nhaplaimatkhaumoi:null,
              thongbaodoimatkhauthanhcong:{thongbao:'thong bao tc',so:3,thongbaoenglish:'th'},openthongtincanhan1:{data:{status:100}},openemailcheck:null,ketquacheckmail:[{username:1}],thongbaocheckmail:{thongbao:'thong bao p',so:2},userlinkemail:null,

@@ -1,6 +1,6 @@
 <template>
-    <!-- <div class="flex min-h-[40px] flex-row  text-lime-900 font-bold rounded  items-center  bg-white drop-shadow-md  dark:bg-transparent "><marquee class="">Xin chào bà con !!!!</marquee></div> -->
-    <div class="flex min-h-[40px] flex-row lg:mt-[54px] text-lime-900 font-bold rounded  items-center  bg-white drop-shadow-md  dark:bg-slate-900 " ><h1>{{ counter.check_box }}</h1></div>
+    <div class="flex min-h-[40px] mt-[100px] flex-row  text-lime-900 font-bold rounded  items-center  bg-white drop-shadow-md  dark:bg-transparent "><marquee class="">{{ counter.admins[0]['Run_Text'] }}</marquee></div>
+    <!-- <div class="flex min-h-[40px] flex-row lg:mt-[54px] text-lime-900 font-bold rounded  items-center  bg-white drop-shadow-md  dark:bg-slate-900 " ><h1>{{ counter.admins }}</h1></div> -->
 </template>
 
 <script >

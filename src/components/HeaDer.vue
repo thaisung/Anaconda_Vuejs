@@ -13,8 +13,8 @@
         </div>
       </div>
       <div class="flex items-center gap-0.5 ">
-        <div v-on:click="counter.BrightDark(2,'dark');" v-bind:class="{'hidden': counter.openMoon !== 1, 'block': counter.openMoon === 1}"  class="h-[25px] w-[25px] flex justify-center items-center bg-sky-600 hover:bg-sky-500  rounded-full"><button type="button"  class=" text-white  text-[15px] rounded-[5px]   duration-300  select-none  focus:shadow-outline  flex items-center "><font-awesome-icon icon="fa-solid fa-sun" class="text-[17px]"/></button></div>
-        <div v-on:click="counter.BrightDark(1,'darkk');" v-bind:class="{'hidden': counter.openMoon !== 2, 'block': counter.openMoon === 2}" class="h-[25px] w-[25px] flex justify-center items-center bg-sky-600 hover:bg-sky-500 rounded-full"><button type="button"  class="   text-white text-[15px] rounded-[5px]   duration-300  select-none   flex items-center "><font-awesome-icon icon="fa-solid fa-moon" class="text-[17px]" /></button></div>
+        <div v-on:click="counter.BrightDark(2,'dark');" v-bind:class="{'hidden': counter.openMoon !== 1, 'block': counter.openMoon === 1}"  class="h-[27px] w-[27px] flex justify-center items-center bg-sky-600 hover:bg-sky-500  rounded-full"><button type="button"  class=" text-white  text-[15px] rounded-[5px]   duration-300  select-none  focus:shadow-outline  flex items-center "><font-awesome-icon icon="fa-solid fa-sun" class="text-[17px]"/></button></div>
+        <div v-on:click="counter.BrightDark(1,'darkk');" v-bind:class="{'hidden': counter.openMoon !== 2, 'block': counter.openMoon === 2}" class="h-[27px] w-[27px] flex justify-center items-center bg-sky-600 hover:bg-sky-500 rounded-full"><button type="button"  class="   text-white text-[15px] rounded-[5px]   duration-300  select-none   flex items-center "><font-awesome-icon icon="fa-solid fa-moon" class="text-[17px]" /></button></div>
       </div>
     </div>
     
