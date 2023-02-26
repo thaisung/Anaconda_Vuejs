@@ -182,7 +182,7 @@
   </div>
 
   <!-- < Bảng điền mật khẩu cấp 2> -->
-  <div v-if="counter.showbangmatkhaucap2==2" class=" flex opacity-50 fixed inset-0 z-40 bg-black dark:bg-gray-300 dark:opacity-30 cursor-pointer" v-on:click="counter.showbangmatkhaucap2=1" ></div>
+  <div v-if="counter.showbangmatkhaucap2==2" class=" flex opacity-50 fixed inset-0 z-40 bg-black dark:bg-gray-300 dark:opacity-30 cursor-pointer" v-on:click="counter.showbangmatkhaucap2=1; counter.Password_Level_2='';" ></div>
   <div v-if="counter.showbangmatkhaucap2==2" class="fixed inset-0 z-50 flex flex-col   items-center shadow-md text-sky-600  rounded-3xl bg-white dark:bg-slate-900  object-cover w-[350px] h-[200px] mx-auto my-auto px-2 pt-2 ">
     <div class="text-[22px] font-semibold">
       <h1 v-if="counter.language==1">Nhập mật khẩu cấp 2</h1>
@@ -194,11 +194,11 @@
     </div>
     <div class="mt-3 flex flex-col justify-evenly gap-1 text-[15px] w-full h-full mb-4">
       <input type="number" v-model="counter.Password_Level_2" class=" w-full px-3 py-1.5 text-center bg-white dark:bg-slate-800 dark:text-gray-300 rounded border-solid border-2 border-sky-600 outline-none font-medium antialiased"/>
-      <div v-if="counter.thongbaoloimatkhaucap2.so==2" class="text-red-600 flex justify-center ">
+      <div v-if="counter.thongbaoloimatkhaucap2.so==2" class="text-red-600 flex justify-center text-[14px]">
         <h1 v-if="counter.language==1">{{ counter.thongbaoloimatkhaucap2.thongbao['Error message'] }}</h1>
         <h1 v-if="counter.language==2">{{ counter.thongbaoloimatkhaucap2.thongbao['Error message English'] }}</h1>
       </div>
-      <button v-on:click="counter.getCookievadangnhaptaikhoan_cap2();" class="py-1.5 mt-2 bg-sky-600  text-white  uppercase rounded hover:bg-sky-500 duration-100 w-full font-semibold "><h1 v-if="counter.language==1">Tiếp tục Đăng nhập</h1><h1 v-if="counter.language==2">Continue Log in</h1></button>
+      <button v-on:click="counter.SetCookievadangnhaptaikhoan_cap2();" class="py-1.5 mt-2 bg-sky-600  text-white  uppercase rounded hover:bg-sky-500 duration-100 w-full font-semibold "><h1 v-if="counter.language==1">Tiếp tục Đăng nhập</h1><h1 v-if="counter.language==2">Continue Log in</h1></button>
     </div>
   </div>
 
@@ -206,8 +206,8 @@
   <div v-if="counter.showbangloadingmatkhaucap2==2" class=" flex opacity-50 fixed inset-0 z-40 bg-black dark:bg-gray-300 dark:opacity-30 cursor-pointer" v-on:click="counter.showbangloadingmatkhaucap2=1" ></div>
   <div v-if="counter.showbangloadingmatkhaucap2==2" class="fixed inset-0 z-50 flex flex-col justify-evenly items-center shadow-md text-sky-600  rounded-3xl bg-white dark:bg-slate-900  object-cover w-[350px] h-[100px] mx-auto my-auto px-2 ">
     <div class="text-[16px] font-semibold">
-      <h1 v-if="counter.language==1">Đang gửi mật khẩu cấp 2 về Email của bạn</h1>
-      <h1 v-if="counter.language==2">Sending 2nd level password to your Email</h1>
+      <h1 v-if="counter.language==1">Đang tải</h1>
+      <h1 v-if="counter.language==2">Loading</h1>
     </div>
     <div   class="text-neutral-800 dark:text-neutral-200 gap-5 justify-center items-center"><hollow-dots-spinner :animation-duration="1000" :dot-size="12" :dots-num="3" :color="'#0891b2'"/></div>
   </div>

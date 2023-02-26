@@ -11,7 +11,7 @@ const Route = useRoute();
 
 export const useCounterStore = defineStore('counter', {
   state: () => {
-    return { URLServer:'https://todayserver.store',URLServerF:'http://127.0.0.1',openMoon:1, openDark:'darkk', opentieudedangnhap:1, showdangnhap:false, opendangki:1, openbgdangki:1, 
+    return { URLServer:'http://127.0.0.1:8000',URLServerF:'http://127.0.0.1',openMoon:1, openDark:'darkk', opentieudedangnhap:1, showdangnhap:false, opendangki:1, openbgdangki:1, 
              showdoimatkhau: false, opendoimatkhau:1, showbangthongtin: false,opendangkithanhcong:1,
              showbangmuasanpham:false, showbangmuathanhcongsanpham:false,showbangmuakhongthanhcongsanpham:false,openinformation:0,openimage:0,
              opensoluong:null,openthongtincanhan:{token:'th'},openemail:null,openusername:null,openpassword:null,openmoney:0,openiduser:null,
@@ -204,6 +204,7 @@ export const useCounterStore = defineStore('counter', {
       this.matkhaucu = null;
       this.matkhaumoi = null;
       this.nhaplaimatkhaumoi =  null;
+      this.Password_Level_2 = '';
     },
     async dangxuattaikhoan1(aa){
       this.datauser = await axios({method:'post',url: this.URLServer+'/user/auth/logoutall/',headers: {Authorization: 'Token ' + this.openthongtincanhan.token }});
@@ -222,6 +223,7 @@ export const useCounterStore = defineStore('counter', {
       this.matkhaucu = null;
       this.matkhaumoi = null;
       this.nhaplaimatkhaumoi =  null;
+      this.Password_Level_2 = '';
     },
     openThongtincanhan(aa){
       this.openthongtincanhan = aa
@@ -232,6 +234,14 @@ export const useCounterStore = defineStore('counter', {
     async dangnhaptaikhoanvataocookie(){
       try{
         this.reponseCaptcha = grecaptcha.getResponse(this.rctc);
+        if(this.check_box==true){
+          VueCookies.set("missme_checkbox","true","15d");
+          VueCookies.set("unpw",this.openusername+"eab42d241cad8d"+this.openpassword,"15d");
+        }
+        else{
+          VueCookies.set("missme_checkbox","false","15d");
+          VueCookies.set("unpw",'null'+"eab42d241cad8d"+'null',"15d");
+        }
         if (this.reponseCaptcha.length != 0){
           this.thongbaoloixacthuccaptcha={so:1,thongbao:'th'};
           this.showdangnhap =! this.showdangnhap;
@@ -290,7 +300,7 @@ export const useCounterStore = defineStore('counter', {
         }
       }
     },
-    async getCookievadangnhaptaikhoan_cap2(){
+    async SetCookievadangnhaptaikhoan_cap2(){
       try{
         this.openthongtincanhan = await axios({method:'post',url: this.URLServer+'/login_Two_factor_authentication/',data: {"username": this.openusername,"password": this.openpassword,"Password_Level_2":this.Password_Level_2}});
         this.openthongtincanhan = await this.openthongtincanhan.data;
@@ -301,6 +311,15 @@ export const useCounterStore = defineStore('counter', {
         this.TransactionHistory();
         this.openthongbaoloidangnhap.so = 2;
         this.thongbaoloimatkhaucap2 ={thongbao:'',so:1};
+
+        if(this.check_box==true){
+          VueCookies.set("missme_checkbox","true","15d");
+          VueCookies.set("unpw",this.openusername+"eab42d241cad8d"+this.openpassword,"15d");
+        }
+        else{
+          VueCookies.set("missme_checkbox","false","15d");
+          VueCookies.set("unpw",'null'+"eab42d241cad8d"+'null',"15d");
+        }
       }
       catch(error){
         this.thongbaoloimatkhaucap2 = {thongbao:error.response.data,so:2}
