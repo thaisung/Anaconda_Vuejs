@@ -290,6 +290,8 @@ export const useCounterStore = defineStore('counter', {
           this.openthongbaoloidangnhap.so = 1;
           this.openthongtincanhan = {token:'th'};
           grecaptcha.reset(this.rctc);
+          this.showdangnhap =! this.showdangnhap;
+          this.showbangloadingmatkhaucap2 = 1;
         }
         else if(this.Statusdangnhap==500){
           this.openthongbaoloidangnhap.thongbao = "Hệ thống cho rằng bạn là người máy, đăng nhập không thành công. Yêu cầu đăng nhập lại!";
@@ -297,6 +299,8 @@ export const useCounterStore = defineStore('counter', {
           this.openthongbaoloidangnhap.so = 1;
           this.openthongtincanhan = {token:'th'};
           grecaptcha.reset(this.rctc);
+          this.showdangnhap =! this.showdangnhap;
+          this.showbangloadingmatkhaucap2 = 1;
         }
       }
     },

@@ -1,5 +1,5 @@
 <template>
-    <div v-if="typeof counter.openthongtincanhan.username == 'string'" class=" flex flex-col grow justify-start scroll-ml-6 snap-start px-2 py-3  items-center gap-5  bg-gray-200 rounded shadow-inner   text-sky-900 dark:text-sky-400 dark:bg-slate-900 dark:border-sky-400 dark:border-2 w-full h-full min-h-[150px]">
+    <div v-if="typeof counter.openthongtincanhan.username == 'string'" class=" flex flex-col grow justify-start scroll-ml-6 snap-start px-2 py-3  items-center gap-5  bg-gray-200 rounded shadow-inner   text-sky-900 dark:text-sky-400 dark:bg-slate-900 dark:border-sky-400 dark:border-2 w-full h-full min-h-[202px]">
       <div class="flex font-semibold">
         <div class="border-2 px-3 py-2 rounded-l-lg border-sky-900 cursor-pointer" v-bind:class="{'bg-sky-900 text-white':counter.openthongtincanhan.Two_factor_authentication=='ON'}" v-on:click="counter.ON_OFF='ON'; counter.on_off_2_factor_authentication();"><h1 v-if="counter.language==1">BẬT</h1><h1 v-if="counter.language==2">TURN ON</h1></div>
         <div class="border-2 px-3 py-2 rounded-r-lg border-sky-900 cursor-pointer" v-bind:class="{'bg-sky-900 text-white':counter.openthongtincanhan.Two_factor_authentication=='OFF'}" v-on:click="counter.ON_OFF='OFF'; counter.on_off_2_factor_authentication();"><h1 v-if="counter.language==1">TẮT</h1><h1 v-if="counter.language==2">TURN OFF</h1></div>
