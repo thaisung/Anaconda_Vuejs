@@ -27,7 +27,7 @@
       </div>
       <div class="flex gap-2 justify-center items-center" v-bind:class="{'hidden': counter.opentieudedangnhap !== 1, 'block': counter.opentieudedangnhap === 1}">
         <div v-on:click="counter.showDangnhap(); add()" class="flex items-center "><button type="button" class=" bg-sky-600  text-white  text-[15px] rounded-[5px] p-[3px]  duration-300  select-none hover:bg-sky-500   px-2 flex gap-1 justify-center items-center"><font-awesome-icon icon="fa-solid fa-user" /><h1 v-if="counter.language==1" class="shrink-0">Đăng nhập</h1><h1 v-if="counter.language==2" class="shrink-0">Log in</h1></button></div>
-        <div class="flex items-center "><button type="button" v-on:click="counter.showDangnhap(); add(); counter.openDangki(2); counter.openBgdangki(2);" class=" bg-sky-600  text-white  text-[15px] rounded-[5px] p-[3px]  duration-300  select-none hover:bg-sky-500   px-2 flex gap-1 justify-center items-center"><font-awesome-icon icon="fa-solid fa-square-plus" /><h1 v-if="counter.language==1" class="shrink-0">Đăng kí</h1><h1 v-if="counter.language==2">Register</h1></button></div>
+        <div class="flex items-center "><button type="button" v-on:click="counter.showDangnhap(); add(); counter.openDangki(2); counter.openBgdangki(2);" class=" bg-sky-600  text-white  text-[15px] rounded-[5px] p-[3px]  duration-300  select-none hover:bg-sky-500   px-2 flex gap-1 justify-center items-center"><font-awesome-icon icon="fa-solid fa-square-plus" /><h1 v-if="counter.language==1" class="shrink-0">Đăng kí</h1><h1 v-if="counter.language==2" class="shrink-0">Register</h1></button></div>
       </div>   
     </div>
 
@@ -42,7 +42,7 @@
       </div>
       <div class="flex gap-2 justify-center items-center" v-bind:class="{'hidden': counter.opentieudedangnhapp !== 2, 'block': counter.opentieudedangnhapp === 2}">
         <div v-on:click="counter.showDangnhap(); add()" class="flex items-center "><button type="button" class=" bg-sky-600  text-white  text-[15px] rounded-[5px] p-[3px]  duration-300  select-none hover:bg-sky-500   px-2 flex gap-1 justify-center items-center"><font-awesome-icon icon="fa-solid fa-user" /><h1 v-if="counter.language==1" class="shrink-0">Đăng nhập</h1><h1 v-if="counter.language==2" class="shrink-0">Log in</h1></button></div>
-        <div class="flex items-center "><button type="button" v-on:click="counter.showDangnhap(); add(); counter.openDangki(2); counter.openBgdangki(2);" class=" bg-sky-600  text-white  text-[15px] rounded-[5px] p-[3px]  duration-300  select-none hover:bg-sky-500  px-2 flex gap-1 justify-center items-center"><font-awesome-icon icon="fa-solid fa-square-plus" /><h1 v-if="counter.language==1" class="shrink-0">Đăng kí</h1><h1 v-if="counter.language==2">Register</h1></button></div>
+        <div class="flex items-center "><button type="button" v-on:click="counter.showDangnhap(); add(); counter.openDangki(2); counter.openBgdangki(2);" class=" bg-sky-600  text-white  text-[15px] rounded-[5px] p-[3px]  duration-300  select-none hover:bg-sky-500  px-2 flex gap-1 justify-center items-center"><font-awesome-icon icon="fa-solid fa-square-plus" /><h1 v-if="counter.language==1" class="shrink-0">Đăng kí</h1><h1 v-if="counter.language==2" class="shrink-0">Register</h1></button></div>
       </div>   
     </div>
   </div>
