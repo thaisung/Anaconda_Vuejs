@@ -8,7 +8,7 @@
     <!-- Banner -->
     <div class="flex flex-col items-center rounded   text-lime-900 dark:text-lime-700   w-full h-full px-4 lg:px-1">
       <div><h1 v-if="counter.language==1" class="text-2xl font-bold antialiased ">Thông báo</h1><h1 v-if="counter.language==2" class="text-2xl font-bold antialiased ">Notify</h1></div>
-      <ul class="list-disc list-outside text-justify">
+      <ul class="list-disc list-outside text-justify font-semibold">
         <li v-for="st in counter.admins[0]['Notification'].split('\r\n')" class="text-justify">{{ st }}</li>
       </ul>
       <!-- <h2 v-if="counter.language==1" class=" font-semibold antialiased ">{{counter.admins[0]['Notification']}}</h2>
