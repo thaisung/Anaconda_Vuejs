@@ -9,5 +9,8 @@
             "Username":"Username",
             "Password":"Password"
         }
+    },
+    "HomeView":{
+        "Number":"Number"
     }
 }

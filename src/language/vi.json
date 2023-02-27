@@ -9,5 +9,8 @@
             "Username":"Tên tài khoản",
             "Password":"Mật khẩu"
         }
+    },
+    "HomeView":{
+        "Number":"Số lượng"
     }
 }

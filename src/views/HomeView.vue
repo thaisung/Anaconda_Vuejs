@@ -70,7 +70,7 @@
             type="number" 
             class=" w-full text-end bg-transparent rounded  outline-none h-[35px] dark:text-gray-200 text-gray-800"
             id="exampleFormControlInput1"
-            placeholder="Số lượng" min="0" v-model="counter.quantity_buy "
+            v-bind:placeholder="$t('HomeView.Number')" min="0" v-model="counter.quantity_buy "
           /></div>
         </div>
         <!-- <div class="flex flex-col mt-5"><div class="flex justify-center items-center mt-6" v-for="iten in item.Categoryy" v-show="counter.openinformation === iten.id"><font-awesome-icon icon="fa-solid fa-link" /></div></div> -->
