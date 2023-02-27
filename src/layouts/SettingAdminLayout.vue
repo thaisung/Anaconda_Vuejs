@@ -14,7 +14,7 @@
         <div class="text-gray-700 mx-2 my-2">
             <div v-if="counter.tabadmin==1" class="flex flex-col gap-3">
                 <div  class="flex gap-1 flex-col">
-                    <div class="font-semibold"><h1 v-if="counter.language==1">Thống kê các thành viên đã đăng kí trên máy chủ</h1><h1 v-if="counter.language==2">Statistics of registered members on the server</h1></div>
+                    <div class="font-bold text-[19px]"><h1 v-if="counter.language==1">Thống kê các thành viên đã đăng kí trên máy chủ</h1><h1 v-if="counter.language==2">Statistics of registered members on the server</h1></div>
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div  class="flex gap-1 flex-col">
-                    <div class="font-semibold"><h1 v-if="counter.language==1">Thống kê các thành viên đã đăng nhập trên máy chủ</h1><h1 v-if="counter.language==2">Statistics of members logged in on the server</h1></div>
+                    <div class="font-bold text-[19px]"><h1 v-if="counter.language==1">Thống kê các thành viên đã đăng nhập trên máy chủ</h1><h1 v-if="counter.language==2">Statistics of members logged in on the server</h1></div>
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -70,7 +70,7 @@
             </div>
             <div v-if="counter.tabadmin==2" class="flex flex-col gap-3">
                 <div class="flex gap-1 flex-col">
-                    <div class="font-semibold"><h1 v-if="counter.language==1">Thống kê số tiền đã nạp trên máy chủ</h1><h1 v-if="counter.language==2">Statistics of the amount loaded on the server</h1></div>
+                    <div class="font-bold text-[19px]"><h1 v-if="counter.language==1">Thống kê số tiền đã nạp trên máy chủ</h1><h1 v-if="counter.language==2">Statistics of the amount loaded on the server</h1></div>
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
                 <div  class="flex gap-1 flex-col">
-                    <div class="font-semibold"><h1 v-if="counter.language==1">Thống kê số tiền đã trừ trên máy chủ</h1><h1 v-if="counter.language==2">Statistics of the amount deducted on the server</h1></div>
+                    <div class="font-bold text-[19px]"><h1 v-if="counter.language==1">Thống kê số tiền đã trừ trên máy chủ</h1><h1 v-if="counter.language==2">Statistics of the amount deducted on the server</h1></div>
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
