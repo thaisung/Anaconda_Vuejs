@@ -1,0 +1,13 @@
+{
+    "HeaDer":{
+        "Login":{
+            "Username":"Tên tài khoản",
+            "Password":"Mật khẩu"
+        },
+        "Register":{
+            "Email":"Địa chỉ Email",
+            "Username":"Tên tài khoản",
+            "Password":"Mật khẩu"
+        }
+    }
+}

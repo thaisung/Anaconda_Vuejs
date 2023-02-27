@@ -14,7 +14,7 @@
                     type="password"
                     class="w-full text-center px-3 py-1.5  bg-white dark:bg-slate-800 outline-none  rounded  text-blue-700 dark:text-gray-300"
                     id="exampleFormControlInput1"
-                    placeholder="Nhập mật khẩu hiện tại " v-model="counter.matkhaucu"
+                     v-model="counter.matkhaucu"
                 /></div>
             </div>
             <div class="flex gap-1 py-3 items-center border-b-2 border-sky-900 dark:border-slate-800">
@@ -25,7 +25,7 @@
                     type="password"
                     class="w-full text-center px-3 py-1.5  bg-white dark:bg-slate-800 outline-none  rounded dark:text-gray-300 text-blue-700"
                     id="exampleFormControlInput1"
-                    placeholder="Nhập mật khẩu mới" v-model="counter.matkhaumoi"
+                     v-model="counter.matkhaumoi"
                 /></div>
             </div>
             <div class="flex gap-1 py-3 items-center border-b-2 border-sky-900 dark:border-slate-800">
@@ -36,7 +36,7 @@
                     type="password"
                     class="w-full text-center px-3 py-1.5  bg-white dark:bg-slate-800 outline-none  rounded dark:text-gray-300 text-blue-700"
                     id="exampleFormControlInput1"
-                    placeholder="Nhập lại mật khẩu mới" v-model="counter.nhaplaimatkhaumoi"
+                     v-model="counter.nhaplaimatkhaumoi"
                 /></div>
             </div>
             <div v-show="counter.thongbaodoimatkhauthanhcong.so == 1 && counter.language ==1" class="flex items-center  text-lime-600 text-[18px] py-2"><h1>{{ counter.thongbaodoimatkhauthanhcong.thongbao }}</h1></div>

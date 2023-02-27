@@ -517,7 +517,8 @@ export const useCounterStore = defineStore('counter', {
     async BankInfor(){
       await axios.get(this.URLServer+'/bankinfor/').then((response) => {this.bankinfor=response});
       this.tabnaptien = this.bankinfor.data[0].id;
-      this.BgCl = this.bankinfor.data[0].Background_Color
+      this.BgCl = this.bankinfor.data[0].Background_Color;
+      this.tabmaqr = this.bankinfor.data[0].id;
     },
     async CryptoInfor(){
       await axios.get(this.URLServer+'/cryptoinfor/').then((response) => {this.cryptoinfor=response.data});

@@ -17,11 +17,11 @@
           <div v-for="iten in item.Categoryy" class="flex  justify-between bg-stone-200 dark:bg-slate-800 min-h-[55px] items-center text-[17px]   font-medium antialiased border-t-2 border-white dark:border-slate-900 px-2 ">
             <div class="flex dark:text-white "><h1 v-if="counter.language==1">{{iten.Name}}</h1><h1 v-if="counter.language==2">{{iten.Name_English}}</h1></div>
             <div class="flex  text-[15px] items-center  sm:pb-0 gap-1">
-                <div v-on:click="counter.showBangthongtin(); counter.openInformation(iten.id); counter.openImage(item.id)" class="lg:flex hidden w-[150px] justify-center "><button type="button" class=" text-[18px] text-sky-600 hover:text-sky-500"><font-awesome-icon icon="fa-solid fa-circle-info" /></button></div>
+                <div v-on:click="counter.showBangthongtin(); counter.openInformation(iten.id); counter.openImage(item.id); add();" class="lg:flex hidden w-[150px] justify-center "><button type="button" class=" text-[18px] text-sky-600 hover:text-sky-500"><font-awesome-icon icon="fa-solid fa-circle-info" /></button></div>
                 <div class="sm:flex hidden w-[150px] justify-center items-center "><div class="rounded"><img class="w-[40px] rounded" :src="counter.URLServer+iten.Nation"/></div></div>
                 <div class="lg:flex hidden w-[150px] justify-center items-center dark:text-white">{{iten.Price}}</div>
                 <div class="flex w-[80px] sm:w-[150px] justify-center items-center dark:text-white ">{{iten.Quantity}}</div>
-                <div class="flex w-[80px] sm:w-[150px] justify-center">
+                <div class="flex w-[80px] sm:w-[150px] justify-center" v-on:click="add()">
                   <button v-show="typeof counter.openthongtincanhan.username == 'string'" type="button" v-on:click="counter.showBangmuasanpham(); counter.openInformation(iten.id); counter.openImage(item.id)" class="bg-sky-600 hover:bg-sky-500 text-white  text-[15px] rounded-[5px] p-[3px] transition duration-100 ease select-none  focus:outline-none focus:shadow-outline px-4"><h1 v-if="counter.language==1">Mua</h1><h1 v-if="counter.language==2">Buy</h1></button>
                   <button v-show="typeof counter.openthongtincanhan.username == 'undefined'" type="button" v-on:click=" counter.showDangnhap();" class="bg-sky-600 hover:bg-sky-500  text-white  text-[15px] rounded-[5px] p-[3px] transition duration-100 ease select-none  focus:outline-none focus:shadow-outline px-4"><h1 v-if="counter.language==1">Mua</h1><h1 v-if="counter.language==2">Buy</h1></button>
                 </div>
@@ -31,8 +31,8 @@
   </div>
 
   <!-- III.Bảng thông tin của từng sản phẩm -->
-  <div v-if="counter.showbangthongtin"  class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
-  <div v-if="counter.showbangthongtin" v-on:click="counter.showBangthongtin" class=" fixed inset-0 z-50  justify-center items-center flex  cursor-pointer">
+  <div v-if="counter.showbangthongtin" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30" ></div>
+  <div v-if="counter.showbangthongtin" v-on:click="counter.showBangthongtin(); remove()"  class=" fixed inset-0 z-50  justify-center items-center flex  cursor-pointer">
   <!-- Bảng thông tin sản phẩm -->
     <div class="  my-auto mx-auto rounded-3xl flex flex-col  w-[350px] px-2 py-2 text-sky-600  bg-white dark:bg-slate-900 gap-2 shadow-md font-semibold">
       <!--header-->
@@ -52,7 +52,7 @@
   </div>
 
   <!-- IV.Bảng mua sản phẩm  -->
-  <div v-if="counter.showbangmuasanpham" v-on:click="counter.showBangmuasanpham(); counter.quantity_buy=null" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
+  <div v-if="counter.showbangmuasanpham" v-on:click="counter.showBangmuasanpham(); counter.quantity_buy=null; remove();" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
   <!-- Bảng mua sản phẩm-->
   <div v-if="counter.showbangmuasanpham"  class=" fixed z-50 inset-0 my-auto mx-auto rounded-3xl flex flex-col  w-[350px] h-[310px] text-sky-600  bg-white dark:bg-slate-900 shadow-md px-2 pt-2">
     <!--header-->
@@ -157,6 +157,9 @@ export default {
     }
   },
   methods:{
+    add() {document.body.classList.add('overflow-hidden')},
+    remove() {document.body.classList.remove('overflow-hidden')},
+    scrollBehavior(){window.scrollTo(0,0);},
     CopyPre() {
       let codeText = document.getElementById('myPre').textContent;
     // copying

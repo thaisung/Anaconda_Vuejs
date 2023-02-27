@@ -1,18 +1,18 @@
 <template>
     <div class=" flex flex-col grow  bg-gray-200 rounded shadow-inner items-center  text-sky-900 w-full min-h-[330px]  dark:bg-transparent  dark:text-yellow-300 dark:border-2 dark:border-sky-400 ">
-        <div class="flex flex-col sm:flex-row sm:gap-5 gap-1 font-bold text-[14px] my-4 " >
-            <div v-for="Bank_Name in counter.bankinfor.data" class="rounded py-1 px-2 cursor-pointer " :style="{'color':Bank_Name.Background_Color}" v-bind:class="{'bg-white dark:bg-slate-200 text-[16px]': counter.tabnaptien == Bank_Name.id && counter.tabnaptien_CRYPTO==1}" v-on:click="counter.tabnaptien=Bank_Name.id; counter.tabnaptien_CRYPTO=1; counter.menu_CRYTOP=false; counter.BgCl= Bank_Name.Background_Color; counter.tabmaqr=Bank_Name.id;"><h1>{{ Bank_Name.Short_Name }}</h1></div>
-            <div class=" flex flex-col relative items-center gap-1 rounded py-1 px-2 cursor-pointer " v-bind:class="{'bg-white dark:bg-slate-200 text-[16px] text-lime-700': counter.tabnaptien_CRYPTO == 2,}" v-on:click="counter.tabnaptien_CRYPTO=2">
+        <div class="flex flex-col sm:flex-row sm:gap-5 gap-1 font-bold text-[14px] mb-4 bg-gray-300 dark:bg-slate-800 shadow-inner rounded px-2 py-2 w-full justify-center" >
+            <div v-for="Bank_Name in counter.bankinfor.data" class="flex rounded py-1 px-2 cursor-pointer justify-center " :style="{'color':Bank_Name.Background_Color}" v-bind:class="{'bg-white dark:bg-slate-900 text-[16px]': counter.tabnaptien == Bank_Name.id && counter.tabnaptien_CRYPTO==1}" v-on:click="counter.tabnaptien=Bank_Name.id; counter.tabnaptien_CRYPTO=1; counter.menu_CRYTOP=false; counter.BgCl= Bank_Name.Background_Color; counter.tabmaqr=Bank_Name.id;"><h1>{{ Bank_Name.Short_Name }}</h1></div>
+            <div class=" flex flex-col relative items-center gap-1 rounded py-1 px-2 cursor-pointer " v-bind:class="{'bg-white dark:bg-slate-900 text-[16px] text-lime-700': counter.tabnaptien_CRYPTO == 2,}" v-on:click="counter.tabnaptien_CRYPTO=2">
               <div class="flex gap-1">
                 <h1>CRYPTO</h1>
-                <font-awesome-icon icon="fa-solid fa-caret-down" v-on:click="counter.menu_CRYTOP=!counter.menu_CRYTOP" class=" flex text-[22px] items-center bg-gray-300 dark:hover:bg-slate-400  px-1 rounded shadow-inner" />
+                <font-awesome-icon icon="fa-solid fa-caret-down" v-on:click="counter.menu_CRYTOP=!counter.menu_CRYTOP" class=" flex text-[22px] items-center bg-gray-300 dark:bg-slate-800 dark:hover:bg-slate-400  px-1 rounded shadow-inner" />
                 <div class="flex gap-1 w-full  justify-start pl-0.5 pr-1 items-center text-[14px]">
                   <img :src="counter.URLServer + counter.infor_CRYPTO.Avatar_Logo" class="w-[20px] h-[20px]"/>
                   <h1>- {{ counter.infor_CRYPTO.Short_Name }} -</h1>
                   <h1>{{ counter.infor_CRYPTO.Crytop_Name }}</h1>
                 </div>
               </div> 
-              <div v-show="counter.menu_CRYTOP" class="flex flex-col gap-2 text-[13px] w-full items-center absolute top-[38px] bg-white dark:bg-slate-200 rounded py-2">
+              <div v-show="counter.menu_CRYTOP" class="flex flex-col gap-2 text-[13px] w-full items-center absolute top-[38px] bg-white dark:bg-slate-800 rounded py-2">
                 <div v-for="cr in counter.cryptoinfor" v-on:click="counter.menu_CRYTOP=!counter.menu_CRYTOP; counter.infor_CRYPTO=cr" class="flex gap-1 hover:bg-gray-200 dark:hover:bg-slate-300 w-full  justify-start px-2 items-center text-[14px]">
                   <img :src="counter.URLServer + cr.Avatar_Logo" class="w-[20px] h-[20px]"/>
                   <h1>- {{ cr.Short_Name }} -</h1>
@@ -40,7 +40,7 @@
                   <h1 v-if="counter.language==1">{{counter.thongbaoloiyeucaunaptien.data['Error message']}}</h1>
                   <h1 v-if="counter.language==2">{{counter.thongbaoloiyeucaunaptien.data['Error message English']}}</h1>
                 </div>
-                <div :style="{'background-color':counter.BgCl}"  @mouseover="counter.BgCl='#0ea5e9'" @mouseout="counter.BgCl=Bank_NameS.Background_Color" class='flex justify-center rounded my-4 py-1 px-2 text-[20px] text-white' v-on:click="counter.YeucauNaptien(); counter.showbangqr=2; counter.tabmaqr=Bank_Name.id"><button><h1 v-if="counter.language==1">Thanh toán</h1><h1 v-if="counter.language==2">Pay</h1></button></div>
+                <div :style="{'background-color':counter.BgCl}"  @mouseover="counter.BgCl='#0ea5e9'" @mouseout="counter.BgCl=Bank_NameS.Background_Color" class='flex justify-center rounded my-4 py-1 px-2 text-[20px] text-white' v-on:click="counter.YeucauNaptien(); counter.showbangqr=2; counter.tabmaqr=Bank_Name.id;"><button v-on:click="add();"><h1 v-if="counter.language==1">Thanh toán</h1><h1 v-if="counter.language==2">Pay</h1></button></div>
               </div>
             </div>
           </div>
@@ -76,6 +76,9 @@ export default {
     }
   },
   methods:{
+    add() {document.body.classList.add('overflow-hidden')},
+    remove() {document.body.classList.remove('overflow-hidden')},
+    scrollBehavior(){window.scrollTo(0,0);},
   },
   mounted:function(){
     this.counter.BankInfor();
@@ -99,5 +102,7 @@ export default {
     color: yellow;
     background-color: #000;
   }
-
+  /* body {
+   overflow: hidden;
+  } */
 </style>

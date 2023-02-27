@@ -11,6 +11,9 @@ import VueAxios from 'vue-axios'
 
 import VueCookies from 'vue-cookies';
 
+import { createI18n } from "vue-i18n";
+import messages from "@intlify/unplugin-vue-i18n/messages";
+
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -41,6 +44,17 @@ library.add(
             )
 
 const app = createApp(App);
+
+const i18n = createI18n({
+        legacy: false,
+        globalInjection: true,
+        locale: 'vi',
+        availableLocales: ["vi", "en"],
+        messages,
+        fallbackLocale: 'vi',
+     })
+    
+app.use(i18n);
 
 app.component('font-awesome-icon', FontAwesomeIcon)
 

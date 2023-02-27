@@ -1,0 +1,13 @@
+{
+    "HeaDer":{
+        "Login":{
+            "Username":"Username",
+            "Password":"Password"
+        },
+        "Register":{
+            "Email":"Email address",
+            "Username":"Username",
+            "Password":"Password"
+        }
+    }
+}
