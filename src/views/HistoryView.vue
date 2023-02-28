@@ -35,7 +35,7 @@
     <!-- V.Bảng chi tiết sản phẩm  -->
     <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id" v-on:click="counter.showbangchitietdonhang = null; remove();" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
     <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id && dh['Code_Orders'].length > 15" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[500px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm ">
-        <div class="flex bg-gray-200 dark:bg-slate-800 rounded shadow-inner justify-center py-2 text-[25px] text-sky-600 font-bold"><h1>Chi tiết đơn hàng</h1></div>
+        <div class="flex bg-gray-200 dark:bg-slate-800 rounded shadow-inner justify-center py-2 text-[25px] text-sky-600 font-bold"><h1 v-if="counter.language==1">Chi tiết đơn hàng</h1><h1 v-if="counter.language==2">Order details</h1></div>
         <div class="flex flex-col gap-1 text-[15px] font-medium w-full h-full mt-3 dark:text-gray-200">
             <div class="flex gap-1 justify-center">
                 <div><h1 v-if="counter.language==1">Sản phẩm :</h1><h1 v-if="counter.language==2">Product :</h1></div>
@@ -56,7 +56,7 @@
             <div  class="flex gap-1 justify-center  mb-2 w-full h-full mt-2"><pre  :id="'myPrehistory'+dh.id" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1"><h1 >{{ dh['Buy_Data'] }}</h1></pre></div>
         </div>
         <div class="flex justify-center gap-2  font-medium shadow-inner py-2 rounded items-center">
-            <div class="flex justify-center items-center bg-sky-600 rounded w-[100px] h-[30px] dark:hover:bg-sky-500"  v-on:click="counter.DownloadFileTxt1(counter.NameProductHistory);"><button class=" text-white">Tải file (.txt)</button></div>
+            <div class="flex justify-center items-center bg-sky-600 rounded w-[100px] h-[30px] dark:hover:bg-sky-500"  v-on:click="counter.DownloadFileTxt1(counter.NameProductHistory);"><button class=" text-white" v-if="counter.language==1">Tải file (.txt)</button><button v-if="counter.language==2" class=" text-white">Download (.txt)</button></div>
             <div v-on:click=" counter.Copythanhcong(); CopyPrehistory();" class="flex justify-center items-center bg-sky-600 rounded w-[50px] h-[30px]  dark:hover:bg-sky-500"><button class=""><font-awesome-icon icon="fa-solid fa-copy" class="text-white text-[20px]" v-show="counter.copythanhcong==1"/>
             <font-awesome-icon icon="fa-solid fa-check" v-show="counter.copythanhcong==2" class="text-white text-[20px]"/></button></div>
         </div>
