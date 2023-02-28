@@ -90,7 +90,7 @@
           <div v-on:click="counter.showDoimatkhau(); counter.showDangnhap(); " class="flex items-center justify-center text-[13px]"><a class="text-slate-800 dark:text-gray-300 hover:text-[15px]  underline font-medium antialiased" href="#!"><h1 v-if="counter.language==1">Quên mật khẩu ?</h1><h1 v-if="counter.language==2">Forgot password ?</h1></a></div>
         </div>
         <div v-show="counter.showcaptcha.so==1" v-on:click="rendercaptchadangnhap(); counter.showcaptcha.so=2;"  id="submit-btn" class=" font-bold text-[14px] " ><button  class=" py-1.5 bg-sky-600  text-white  uppercase rounded hover:bg-sky-500   duration-100 w-full " type="button"><h1 v-if="counter.language==1">Đăng nhập</h1><h1 v-if="counter.language==2">Log in</h1></button></div>
-        <div v-show="counter.showcaptcha.so==2" v-on:click="counter.dangnhaptaikhoanvataocookie(); remove()"  id="submit-btn" class=" font-bold text-[14px] " ><button  class=" py-1.5 bg-sky-600  text-white  uppercase rounded hover:bg-sky-500 duration-100 w-full " type="button"><h1 v-if="counter.language==1">Đăng nhập</h1><h1 v-if="counter.language==2">Log in</h1></button></div>
+        <div v-show="counter.showcaptcha.so==2" v-on:click="counter.dangnhaptaikhoanvataocookie(); remove(); "  id="submit-btn" class=" font-bold text-[14px] " ><button  class=" py-1.5 bg-sky-600  text-white  uppercase rounded hover:bg-sky-500 duration-100 w-full " type="button"><h1 v-if="counter.language==1">Đăng nhập</h1><h1 v-if="counter.language==2">Log in</h1></button></div>
       </div>
       <!-- Form register -->
       <div class="flex flex-col justify-evenly h-full " v-bind:class="{'hidden': counter.opendangki != 2, 'block': counter.opendangki == 2}">

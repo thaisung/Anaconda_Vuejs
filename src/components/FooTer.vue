@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col   min-h-[100px] py-5  justify-center font-medium antialiased text-neutral-800 dark:text-neutral-200 rounded bg-white dark:bg-slate-900 gap-3 opacity-90" >
-        <div class="flex items-center justify-center font-normal"><h1> Ha Noi City, Viet Nam, 2023</h1></div>
+        <div class="flex items-center justify-center font-normal"><h1> Ha Noi, Viet Nam, 2023</h1></div>
         <div class="flex items-center justify-center  text-2xl text-[25px] gap-6 my-2">
             <font-awesome-icon icon="fa-brands fa-css3" />
             <font-awesome-icon icon="fa-brands fa-html5" />

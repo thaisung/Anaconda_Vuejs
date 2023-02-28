@@ -234,6 +234,15 @@ export const useCounterStore = defineStore('counter', {
     setCookie(){
       VueCookies.set("username", this.openthongtincanhan.token + "eab42d241cad8d" + this.openthongtincanhan.id,"7d");
     },
+    rendercaptchadangnhap_lai(){
+      try{this.counter.rctc = grecaptcha.render('g-recaptcha', {
+        'sitekey' : '6LfaruMjAAAAALdEG9aH6Q2qIvlqHeotuCWe2dJs'
+      });}
+      catch{
+        this.counter.showcaptcha={so:2,nut:'cursor-not-allowed'};
+        grecaptcha.reset(this.counter.rctc);
+      } 
+    },
     async dangnhaptaikhoanvataocookie(){
       try{
         this.reponseCaptcha = grecaptcha.getResponse(this.rctc);
@@ -285,27 +294,29 @@ export const useCounterStore = defineStore('counter', {
         }else{this.thongbaoloixacthuccaptcha={so:2,thongbao:'Chưa xác thực Captcha !',thongbaoenglish:'Captcha not authenticated !'}}
       }
       catch(error){
-        this.openthongtincanhan = error.response;
-        this.Statusdangnhap = this.openthongtincanhan.status;
-        if(this.Statusdangnhap==400){
-          this.openthongbaoloidangnhap.thongbao = this.openthongtincanhan.data['Error message'];
-          this.openthongbaoloidangnhap.thongbaoenglish = this.openthongtincanhan.data['Error message English'];
-          this.openthongbaoloidangnhap.so = 1;
-          this.openthongtincanhan = {token:'th'};
-          // grecaptcha.reset(this.rctc);
-          this.showdangnhap =! this.showdangnhap;
+        try{
           this.showbangloadingmatkhaucap2 = 1;
-          grecaptcha.reset(this.rctc);
-        }
-        else if(this.Statusdangnhap==500){
-          this.openthongbaoloidangnhap.thongbao = "Hệ thống cho rằng bạn là người máy, đăng nhập không thành công. Yêu cầu đăng nhập lại!";
-          this.openthongbaoloidangnhap.thongbaoenglish = "The system thinks you are a robot, login failed. Login again required !";
-          this.openthongbaoloidangnhap.so = 1;
-          this.openthongtincanhan = {token:'th'};
-          // grecaptcha.reset(this.rctc);
           this.showdangnhap =! this.showdangnhap;
-          this.showbangloadingmatkhaucap2 = 1;
-          grecaptcha.reset(this.rctc);
+          this.openthongtincanhan = error.response;
+          this.Statusdangnhap = this.openthongtincanhan.status;
+          if(this.Statusdangnhap==400){
+            this.openthongbaoloidangnhap.thongbao = this.openthongtincanhan.data['Error message'];
+            this.openthongbaoloidangnhap.thongbaoenglish = this.openthongtincanhan.data['Error message English'];
+            this.openthongbaoloidangnhap.so = 1;
+            this.openthongtincanhan = {token:'th'};
+            this.showcaptcha.so=1;
+            grecaptcha.reset(this.rctc);            
+          }
+          else if(this.Statusdangnhap==500){
+            this.openthongbaoloidangnhap.thongbao = "Hệ thống cho rằng bạn là người máy, đăng nhập không thành công. Yêu cầu đăng nhập lại!";
+            this.openthongbaoloidangnhap.thongbaoenglish = "The system thinks you are a robot, login failed. Login again required !";
+            this.openthongbaoloidangnhap.so = 1;
+            this.openthongtincanhan = {token:'th'};
+            this.showcaptcha.so=1;
+            grecaptcha.reset(this.rctc);
+          }
+        }catch{
+          this.showcaptcha.so==1;
         }
       }
     },
