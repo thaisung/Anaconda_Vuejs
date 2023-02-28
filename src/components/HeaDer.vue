@@ -227,7 +227,7 @@
             type="text"
             class="font-medium text-center antialiased w-8/9 px-3 py-1.5  bg-white dark:bg-slate-900  rounded outline-none text-black dark:text-gray-300 border-solid border-2 border-sky-600"
             id="exampleFormControlInput1"
-            placeholder="Email address" v-model="counter.openemailcheck"
+            v-model="counter.openemailcheck"
           />
           <div v-show="counter.thongbaocheckmail.so == 1 && counter.language == 1"><h1 class="text-red-600 text-[13px] mt-1 font-medium antialiased">{{ counter.thongbaocheckmail.thongbao }}</h1></div>
           <div v-show="counter.thongbaocheckmail.so == 1 && counter.language == 2"><h1 class="text-red-600 text-[13px] mt-1 font-medium antialiased">{{ counter.thongbaocheckmail.thongbaoenglish }}</h1></div>
@@ -255,7 +255,7 @@
             type="number"
             class="font-medium text-center antialiased w-1/2 px-3 py-1.5  bg-white dark:bg-slate-900 dark:text-gray-300 border-solid border-2 border-sky-600 rounded outline-none text-black"
             id="exampleFormControlInput1"
-            placeholder="Code" v-model="counter.codeOTP"
+            v-model="counter.codeOTP"
           /></div>
         <div v-show="counter.thongbaoloiOTP.so==1 && counter.language == 1" class="cursor-default font-medium antialiased text-red-600 text-[13px] flex flex-col items-center justify-center"><h1>{{ counter.thongbaoloiOTP.thongbao }}</h1><a class="font-medium antialiased text-slate-800  hover:text-slate-900  underline " v-on:click="counter.guiOTPdenEmail();"><h1 v-if="counter.language==1">Gửi lại mã xác nhận !</h1><h1 v-if="counter.language==2">Resend confirmation code !</h1></a></div>
         <div v-show="counter.thongbaoloiOTP.so==1 && counter.language == 2" class="cursor-default font-medium antialiased text-red-600 text-[13px] flex flex-col items-center justify-center"><h1>{{ counter.thongbaoloiOTP.thongbaoenglish }}</h1><a class="font-medium antialiased text-slate-800  hover:text-slate-900  underline " v-on:click="counter.guiOTPdenEmail();"><h1 v-if="counter.language==1">Gửi lại mã xác nhận !</h1><h1 v-if="counter.language==2">Resend confirmation code !</h1></a></div>
@@ -277,7 +277,7 @@
     </div>
     <!-- thong bao doi mk thanh cong -->
     <div v-if="counter.opendoimatkhau == 5" class="flex flex-col gap-2 h-[800px] py-2 items-center text-[14px] border-b-2 rounded border-lime-900 x-12 text-lime-600 justify-center">
-      <div class="text-center text-[20px]"><h1 v-if="counter.language==1">Đổi mật khẩu thành công.</h1><h1 v-if="counter.language==2">Change password successfully.</h1></div>
+      <div class="text-center text-[20px] font-semibold"><h1 v-if="counter.language==1">Đổi mật khẩu thành công.</h1><h1 v-if="counter.language==2">Change password successfully.</h1></div>
       <div class="flex justify-center "><font-awesome-icon icon="fa-solid fa-circle-check" class="text-4xl"/></div>
     </div>
     <!-- Footer -->
@@ -285,7 +285,7 @@
     <div v-on:click="counter.openDoimatkhau(3); counter.guiOTPdenEmail();" v-if="counter.opendoimatkhau == 2" class=" flex justify-center items-center w-full h-full font-semibold text-[14px] my-auto  antialiased"><button class=" antialiased py-1 px-2 bg-sky-600 text-white rounded  hover:bg-sky-500  duration-100  " type="button"><h1 v-if="counter.language==1">Tiếp theo</h1><h1 v-if="counter.language==2">Next</h1></button></div>
     <div v-on:click=" counter.SosanhOTP();" v-if="counter.opendoimatkhau == 3" class=" flex justify-center items-center w-full h-full font-semibold text-[14px] my-auto  antialiased"><button class=" antialiased py-1 px-2 bg-sky-600 text-white rounded  hover:bg-sky-500  duration-100  " type="button"><h1 v-if="counter.language==1">Tiếp theo</h1><h1 v-if="counter.language==2">Next</h1></button></div>
     <div v-on:click=" counter.ResetPassword();" v-if="counter.opendoimatkhau == 4" class=" flex justify-center items-center w-full h-full font-semibold text-[14px] my-auto  antialiased"><button class=" antialiased py-1 px-2 bg-sky-600 text-white rounded  hover:bg-sky-500  duration-100  " type="button"><h1 v-if="counter.language==1">Tiếp theo</h1><h1 v-if="counter.language==2">Next</h1></button></div>
-    <div v-on:click="counter.showDoimatkhau(); counter.openDoimatkhau(1); counter.Reset_Thong_tin_doi_mk();" v-if="counter.opendoimatkhau == 5" class=" flex justify-center items-center w-full h-full font-semibold text-[14px] my-auto  antialiased"><button class=" antialiased py-1 px-2 bg-sky-600 text-white rounded  hover:bg-sky-500  duration-100  " type="button"><h1 v-if="counter.language==1">Tiếp theo</h1><h1 v-if="counter.language==2">Next</h1></button></div>
+    <div v-on:click="counter.showDoimatkhau(); counter.openDoimatkhau(1); counter.Reset_Thong_tin_doi_mk(); counter.showdangnhap=!showdangnhap" v-if="counter.opendoimatkhau == 5" class=" flex justify-center items-center w-full h-full font-semibold text-[14px] my-auto  antialiased"><button class=" antialiased py-1 px-2 bg-sky-600 text-white rounded  hover:bg-sky-500  duration-100  " type="button"><h1 v-if="counter.language==1">Tiến hành đăng nhập</h1><h1 v-if="counter.language==2">Proceed to login</h1></button></div>
   </div>
 
 
