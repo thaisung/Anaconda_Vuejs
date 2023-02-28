@@ -56,7 +56,7 @@
             <div  class="flex gap-1 justify-center  mb-2 w-full h-full mt-2"><pre  :id="'myPrehistory'+dh.id" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1"><h1 >{{ dh['Buy_Data'] }}</h1></pre></div>
         </div>
         <div class="flex justify-center gap-2  font-medium shadow-inner py-2 rounded items-center">
-            <div class="flex justify-center items-center bg-sky-600 rounded w-[100px] h-[30px] dark:hover:bg-sky-500"  v-on:click="counter.DownloadFileTxt1(counter.NameProductHistory);"><button class=" text-white" v-if="counter.language==1">Tải file (.txt)</button><button v-if="counter.language==2" class=" text-white">Download (.txt)</button></div>
+            <div class="flex justify-center items-center bg-sky-600 rounded w-[155px] h-[30px] dark:hover:bg-sky-500"  v-on:click="counter.DownloadFileTxt1(counter.NameProductHistory);"><button class=" text-white" v-if="counter.language==1">Tải file (.txt)</button><button v-if="counter.language==2" class=" text-white">Download files (.txt)</button></div>
             <div v-on:click=" counter.Copythanhcong(); CopyPrehistory();" class="flex justify-center items-center bg-sky-600 rounded w-[50px] h-[30px]  dark:hover:bg-sky-500"><button class=""><font-awesome-icon icon="fa-solid fa-copy" class="text-white text-[20px]" v-show="counter.copythanhcong==1"/>
             <font-awesome-icon icon="fa-solid fa-check" v-show="counter.copythanhcong==2" class="text-white text-[20px]"/></button></div>
         </div>
