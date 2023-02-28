@@ -12,5 +12,8 @@
     },
     "HomeView":{
         "Number":"Số lượng"
+    },
+    "HistoryView":{
+        "Code_Oder":"Mã hóa đơn"
     }
 }

@@ -332,9 +332,9 @@
     </div>
     <div class=" flex justify-center items-center font-semibold text-justify text-sky-900 dark:bg-slate-800 dark:text-gray-200 mx-2 mb-2 bg-gray-200 round shadow-inner rounded px-2 py-2 text-[15px]">
       <h1 v-if="counter.language==1">Vui lòng nhập chính xác nội dung chuyển khoản để hệ thống kiểm tra và kích hoạt tự động. Tài khoản của bạn sẽ được cộng tiền sau 1 đến 5 phút.
-      Nếu quá 5p tiền chưa vào tài khoản, bạn vui lòng liên hệ tại fanpage VANTHAI để được hỗ trợ.</h1>
+      Nếu quá 5p tiền chưa vào tài khoản, bạn vui lòng liên hệ Hotline: 0866.558.626 để được hỗ trợ.</h1>
       <h1 v-if="counter.language==2">Pl enter the exact transfer content for the system to check and activate automatically. Your account will be credited in 1 to 5 minutes.
-      If more than 5p money has not been in your account, pl contact VANTHAI fanpage for support.</h1>
+      If more than 5p money has not been in your account, please contact Hotline: 0866.558.626 for support.</h1>
     </div>
   </div>
 

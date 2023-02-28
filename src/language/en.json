@@ -12,5 +12,8 @@
     },
     "HomeView":{
         "Number":"Number"
+    },
+    "HistoryView":{
+        "Code_Oder":"Code oder"
     }
 }

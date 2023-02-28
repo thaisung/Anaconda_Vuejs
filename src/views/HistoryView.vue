@@ -4,7 +4,7 @@
             <div class="bg-sky-900 dark:bg-slate-800 border-white dark:border-slate-900 border-b-2 py-2 gap-2 rounded-t flex flex-col  items-center px-2 justify-between md:flex-row">
                 <div class="flex bg-white dark:bg-slate-900 items-center rounded h-[40px] w-full md:w-[320px] px-1 py-1  ">
                     <div class="px-2"><font-awesome-icon icon="fa-solid fa-magnifying-glass" class="text-sky-900 text-[16px]"/></div>
-                    <div class="grow"><input class="rounded outline-none w-full dark:bg-slate-900 dark:text-gray-200" placeholder="Mã hóa đơn" v-model="counter.seachcode"/></div>
+                    <div class="grow"><input class="rounded outline-none w-full dark:bg-slate-900 dark:text-gray-200" :placeholder="$t('HistoryView.Code_Oder')" v-model="counter.seachcode"/></div>
                     <div v-on:click="counter.TransactionHistory();"><button class="bg-gray-600 hover:bg-gray-500 rounded text-white px-2 py-1 text-[15px]"><h1 v-if="counter.language==1">Tìm kiếm</h1><h1 v-if="counter.language==2">Seach</h1></button></div>
                 </div>
                 <div class="text-white flex gap-3 items-center justify-center">
@@ -34,7 +34,7 @@
 
     <!-- V.Bảng chi tiết sản phẩm  -->
     <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id" v-on:click="counter.showbangchitietdonhang = null" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
-    <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id && dh['Code_Orders'].length > 15" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[500px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm">
+    <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id && dh['Code_Orders'].length > 15" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[500px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm ">
         <div class="flex bg-gray-200 dark:bg-slate-800 rounded shadow-inner justify-center py-2 text-[25px] text-sky-600 font-bold"><h1>Chi tiết đơn hàng</h1></div>
         <div class="flex flex-col gap-1 text-[15px] font-medium w-full h-full mt-3 dark:text-gray-200">
             <div class="flex gap-1 justify-center">
