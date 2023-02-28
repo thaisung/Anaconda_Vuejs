@@ -213,8 +213,8 @@
   </div>
 
   <!-- II.Bảng lấy lại mật khẩu -->
-  <div v-if="counter.showdoimatkhau" class=" flex opacity-50 fixed inset-0 z-40 bg-black dark:bg-gray-300 dark:opacity-30 cursor-pointer" v-on:click="counter.showDoimatkhau(); counter.openDoimatkhau(1); remove();" ></div>
-  <div v-if="counter.showdoimatkhau" class="fixed inset-0 z-50 flex flex-col justify-between items-center shadow-md text-sky-600  rounded-3xl bg-white dark:bg-slate-900  object-cover w-[330px] h-[260px] mx-auto my-auto px-2 pt-2 ">
+  <div v-if="counter.showdoimatkhau" class=" flex opacity-50 fixed inset-0 z-40 bg-black dark:bg-gray-300 dark:opacity-30 cursor-pointer" v-on:click="counter.showDoimatkhau(); counter.openDoimatkhau(1); remove(); counter.Reset_Thong_tin_doi_mk();" ></div>
+  <div v-if="counter.showdoimatkhau" class="fixed inset-0 z-50 flex flex-col justify-between items-center shadow-md text-sky-600  rounded-3xl bg-white dark:bg-slate-900  object-cover w-[350px] h-[260px] mx-auto my-auto px-2 pt-2 ">
     <!-- Header -->
     <div class="flex  bg-gray-100 dark:bg-slate-800 dark:border-none border-solid border-2 border-gray-200 rounded-t-3xl rounded-b shadow-inner px-2 py-2 w-full justify-center items-center">
       <div class="font-semibold antialiased"><h1 v-if="counter.language==1">Chúng tôi sẽ giúp bạn lấy lại mật khẩu</h1><h1 v-if="counter.language==2">We will help you recover your password</h1></div>
@@ -269,15 +269,15 @@
               type="password"
               class="font-medium text-center antialiased w-8/9 px-3 py-1.5  bg-white dark:bg-slate-900 dark:text-gray-300 rounded outline-none  text-black border-solid border-2 border-sky-600"
               id="exampleFormControlInput1"
-              placeholder="A new password" v-model="counter.resetpassword"
+              v-model="counter.resetpassword"
             /></div>
           <div  class="font-medium antialiased text-[13px] text-red-600" v-show="counter.ketquaresetpassword.so == 1 && counter.language == 1"><h1>{{ counter.ketquaresetpassword.thongbao }}</h1></div>
           <div  class="font-medium antialiased text-[13px] text-red-600" v-show="counter.ketquaresetpassword.so == 1 && counter.language == 2"><h1>{{ counter.ketquaresetpassword.thongbaoenglish }}</h1></div>
         </div>
     </div>
     <!-- thong bao doi mk thanh cong -->
-    <div v-if="counter.opendoimatkhau == 5" class="flex flex-col h-[950px] py-4 items-center text-[14px] border-b-2 rounded border-lime-900 x-12 text-lime-600 justify-center">
-      <div class="text-center"><h1 v-if="counter.language==1">Đổi mật khẩu thành công.</h1><h1 v-if="counter.language==2">Change password successfully.</h1></div>
+    <div v-if="counter.opendoimatkhau == 5" class="flex flex-col gap-2 h-[800px] py-2 items-center text-[14px] border-b-2 rounded border-lime-900 x-12 text-lime-600 justify-center">
+      <div class="text-center text-[20px]"><h1 v-if="counter.language==1">Đổi mật khẩu thành công.</h1><h1 v-if="counter.language==2">Change password successfully.</h1></div>
       <div class="flex justify-center "><font-awesome-icon icon="fa-solid fa-circle-check" class="text-4xl"/></div>
     </div>
     <!-- Footer -->
@@ -285,7 +285,7 @@
     <div v-on:click="counter.openDoimatkhau(3); counter.guiOTPdenEmail();" v-if="counter.opendoimatkhau == 2" class=" flex justify-center items-center w-full h-full font-semibold text-[14px] my-auto  antialiased"><button class=" antialiased py-1 px-2 bg-sky-600 text-white rounded  hover:bg-sky-500  duration-100  " type="button"><h1 v-if="counter.language==1">Tiếp theo</h1><h1 v-if="counter.language==2">Next</h1></button></div>
     <div v-on:click=" counter.SosanhOTP();" v-if="counter.opendoimatkhau == 3" class=" flex justify-center items-center w-full h-full font-semibold text-[14px] my-auto  antialiased"><button class=" antialiased py-1 px-2 bg-sky-600 text-white rounded  hover:bg-sky-500  duration-100  " type="button"><h1 v-if="counter.language==1">Tiếp theo</h1><h1 v-if="counter.language==2">Next</h1></button></div>
     <div v-on:click=" counter.ResetPassword();" v-if="counter.opendoimatkhau == 4" class=" flex justify-center items-center w-full h-full font-semibold text-[14px] my-auto  antialiased"><button class=" antialiased py-1 px-2 bg-sky-600 text-white rounded  hover:bg-sky-500  duration-100  " type="button"><h1 v-if="counter.language==1">Tiếp theo</h1><h1 v-if="counter.language==2">Next</h1></button></div>
-    <div v-on:click="counter.showDoimatkhau(); counter.openDoimatkhau(1);" v-if="counter.opendoimatkhau == 5" class=" flex justify-center items-center w-full h-full font-semibold text-[14px] my-auto  antialiased"><button class=" antialiased py-1 px-2 bg-sky-600 text-white rounded  hover:bg-sky-500  duration-100  " type="button"><h1 v-if="counter.language==1">Tiếp theo</h1><h1 v-if="counter.language==2">Next</h1></button></div>
+    <div v-on:click="counter.showDoimatkhau(); counter.openDoimatkhau(1); counter.Reset_Thong_tin_doi_mk();" v-if="counter.opendoimatkhau == 5" class=" flex justify-center items-center w-full h-full font-semibold text-[14px] my-auto  antialiased"><button class=" antialiased py-1 px-2 bg-sky-600 text-white rounded  hover:bg-sky-500  duration-100  " type="button"><h1 v-if="counter.language==1">Tiếp theo</h1><h1 v-if="counter.language==2">Next</h1></button></div>
   </div>
 
 

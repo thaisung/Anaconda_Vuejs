@@ -574,6 +574,14 @@ export const useCounterStore = defineStore('counter', {
       this.copythanhcong = 2;
       setTimeout(this.Copythanhcongg, 1000);
     },
+    Reset_Thong_tin_doi_mk(){
+      this.openemailcheck = '';
+      this.thongbaocheckmail.so = 2;
+      this.codeOTP = '';
+      this.thongbaoloiOTP.so = 2;
+      this.resetpassword = '';
+      this.ketquaresetpassword.so = 2;
+    },
     // captcha(){
     //   this.rctc = grecaptcha.render('g-recaptcha', {
     //     'sitekey' : '6LfaruMjAAAAALdEG9aH6Q2qIvlqHeotuCWe2dJs'
