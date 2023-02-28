@@ -26,14 +26,14 @@
                     <div class="col-span-4 sm:col-span-2  items-center hidden lg:flex"><h1>{{ dh.Code_Orders }}</h1></div>
                     <div class="col-span-2 sm:col-span-2  items-center hidden lg:flex"><h1>{{ dh.Transaction_Time }}</h1></div>
                     <div class="items-center col-span-3 lg:col-span-1"><h1>{{ dh.Payment_Amount }}</h1></div>
-                    <div class="flex items-center col-span-2 lg:col-span-1" v-on:click="counter.showbangchitietdonhang = dh.id; counter.NameProductHistory = dh.Content; counter.CodeOderHistory = dh.Code_Orders; counter.prehistory='myPrehistory'+dh.id"><button  class="bg-sky-900 dark:bg-sky-400 dark:hover:bg-sky-300 text-white dark:text-slate-900 rounded px-2 py-1 hover:bg-sky-800"><h1 v-if="counter.language==1">Chi tiết</h1><h1 v-if="counter.language==2">Detail</h1></button></div>
+                    <div class="flex items-center col-span-2 lg:col-span-1" v-on:click="counter.showbangchitietdonhang = dh.id; counter.NameProductHistory = dh.Content; counter.CodeOderHistory = dh.Code_Orders; counter.prehistory='myPrehistory'+dh.id; add();"><button  class="bg-sky-900 dark:bg-sky-400 dark:hover:bg-sky-300 text-white dark:text-slate-900 rounded px-2 py-1 hover:bg-sky-800"><h1 v-if="counter.language==1">Chi tiết</h1><h1 v-if="counter.language==2">Detail</h1></button></div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- V.Bảng chi tiết sản phẩm  -->
-    <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id" v-on:click="counter.showbangchitietdonhang = null" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
+    <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id" v-on:click="counter.showbangchitietdonhang = null; remove();" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
     <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id && dh['Code_Orders'].length > 15" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[500px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm ">
         <div class="flex bg-gray-200 dark:bg-slate-800 rounded shadow-inner justify-center py-2 text-[25px] text-sky-600 font-bold"><h1>Chi tiết đơn hàng</h1></div>
         <div class="flex flex-col gap-1 text-[15px] font-medium w-full h-full mt-3 dark:text-gray-200">
@@ -92,6 +92,9 @@ export default {
     return {counter}
   },
   methods:{
+    add() {document.body.classList.add('overflow-hidden')},
+    remove() {document.body.classList.remove('overflow-hidden')},
+    scrollBehavior(){window.scrollTo(0,0);},
     CopyPrehistory() {
       let codeTexthistory = document.getElementById(this.counter.prehistory).textContent;
     // copying
