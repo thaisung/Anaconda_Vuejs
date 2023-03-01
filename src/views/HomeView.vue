@@ -88,7 +88,7 @@
     </div>
     <!-- Footer -->
     <div class="flex  justify-center  items-center h-full">
-      <button type="button" v-on:click=" counter.showBangmuasanpham(); counter.MuaHang(); " class=" bg-sky-600  text-white font-medium  text-[15px] rounded-[5px] p-[3px] transition duration-300 ease select-none hover:bg-orange-600  focus:outline-none focus:shadow-outline px-4"><h1 v-if="counter.language==1">Mua</h1><h1 v-if="counter.language==2">Buy</h1></button>
+      <button type="button" v-on:click=" counter.showBangmuasanpham(); counter.MuaHang(); " class=" bg-sky-600  text-white font-medium  text-[15px] rounded-[5px] p-[3px] transition duration-300 ease select-none hover:bg-sky-500  focus:outline-none focus:shadow-outline px-4"><h1 v-if="counter.language==1">Mua</h1><h1 v-if="counter.language==2">Buy</h1></button>
     </div>
   </div>
 
@@ -123,8 +123,8 @@
       <div  class="flex gap-1 justify-center  mb-2 w-full h-full mt-2"><pre  id="myPre" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1 dark:text-gray-300"><h1 v-for="i in counter.thongbaoloimuahang.data['Order details'].Data">{{ i+'\r\n' }}</h1></pre></div>
       </div>
       <div class="flex justify-center gap-2 bg-gray-200 dark:bg-slate-800 font-medium shadow-inner py-2 rounded items-center">
-        <div class="flex justify-center items-center bg-sky-600 rounded  hover:bg-orange-600 "  v-on:click="counter.DownloadFileTxt(); counter.showBangmuathanhcongsanpham();"><button class=" text-white px-2 py-[3px]"><h1 v-if="counter.language==1">Tải file (.txt)</h1><h1 v-if="counter.language==2">Download files (.txt)</h1></button></div>
-        <div v-on:click=" counter.Copythanhcong(); CopyPre();" class="flex justify-center items-center bg-sky-600 rounded w-[50px] h-[30px] hover:bg-orange-600 "><button class=""><font-awesome-icon icon="fa-solid fa-copy" class="text-white text-[20px]" v-show="counter.copythanhcong==1"/>
+        <div class="flex justify-center items-center bg-sky-600 rounded  hover:bg-sky-500 "  v-on:click="counter.DownloadFileTxt(); counter.showBangmuathanhcongsanpham();"><button class=" text-white px-2 py-[3px]"><h1 v-if="counter.language==1">Tải file (.txt)</h1><h1 v-if="counter.language==2">Download files (.txt)</h1></button></div>
+        <div v-on:click=" counter.Copythanhcong(); CopyPre();" class="flex justify-center items-center bg-sky-600 rounded w-[50px] h-[30px] hover:bg-sky-500 "><button class=""><font-awesome-icon icon="fa-solid fa-copy" class="text-white text-[20px]" v-show="counter.copythanhcong==1"/>
           <font-awesome-icon icon="fa-solid fa-check" v-show="counter.copythanhcong==2" class="text-white text-[20px]"/></button></div>
       </div>
   </div>
