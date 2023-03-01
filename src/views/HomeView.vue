@@ -93,7 +93,7 @@
   </div>
 
   <!-- V.Thông báo mua thành công sản phẩm  -->
-  <div v-if="counter.showbangmuathanhcongsanpham" v-on:click="counter.showBangmuathanhcongsanpham();" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
+  <div v-if="counter.showbangmuathanhcongsanpham" v-on:click="counter.showBangmuathanhcongsanpham(); remove();" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
   <div v-if="counter.showbangmuathanhcongsanpham" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[500px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm">
       <div class="flex bg-gray-200 dark:bg-slate-800 rounded shadow-inner justify-center py-2 text-[25px] text-sky-600 font-bold"><h1 v-if="counter.language==1">Bạn đã mua thành công</h1><h1 v-if="counter.language==2">You have successfully purchased</h1></div>
       <div class="flex flex-col gap-1 text-[15px] font-medium w-full h-full mt-3">
