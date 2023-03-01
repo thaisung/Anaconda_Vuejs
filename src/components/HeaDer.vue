@@ -240,7 +240,7 @@
       <div class="flex flex-col  justify-center gap-2">
         <div v-for="usitem in counter.ketquacheckmail.data" class="flex items-center font-medium antialiased">
           <div class="form-check">
-            <input type="radio" :value=usitem.username v-model="counter.userlinkemail" class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-600 bg-white checked:bg-sky-600 checked:border-blue-600 focus:outline-none  duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" >
+            <input type="radio" :value=usitem.username v-model="counter.userlinkemail" class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-600 bg-white dark:bg-slate-900 checked:bg-sky-600 checked:border-blue-600 focus:outline-none  duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" >
           </div>
           <div class="flex items-center justify-center"><h1 class="text-[15px]">{{ usitem.username }}</h1></div>
           <div v-show="counter.opentab == 100" class="flex items-center justify-center"><h1 class="text-[15px]">{{ usitem.id }}</h1></div>
