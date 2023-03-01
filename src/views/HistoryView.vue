@@ -34,17 +34,17 @@
 
     <!-- V.Bảng chi tiết sản phẩm  -->
     <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id" v-on:click="counter.showbangchitietdonhang = null; remove();" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
-    <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id && dh['Code_Orders'].length > 15" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[500px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm ">
+    <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id && dh['Code_Orders'].length > 14" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[500px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm ">
         <div class="flex bg-gray-200 dark:bg-slate-800 rounded shadow-inner justify-center py-2 text-[25px] text-sky-600 font-bold"><h1 v-if="counter.language==1">Chi tiết đơn hàng</h1><h1 v-if="counter.language==2">Order details</h1></div>
         <div class="flex flex-col gap-1 text-[15px] font-medium w-full h-full mt-3 dark:text-gray-200">
             <div class="flex gap-1 justify-center">
                 <div><h1 v-if="counter.language==1">Sản phẩm :</h1><h1 v-if="counter.language==2">Product :</h1></div>
                 <div><h1>{{ dh.Content }}</h1></div>
             </div>
-            <!-- <div  class="flex gap-1 justify-center">
+            <div  class="flex gap-1 justify-center">
                 <div><h1 v-if="counter.language==1">Số lượng :</h1><h1 v-if="counter.language==2">Quantity :</h1></div>
                 <div><h1>{{dh['Buy_Data'].split('\r\n').length -1  }}</h1></div>
-            </div> -->
+            </div>
             <div  class="flex gap-1 justify-center">
                 <div><h1 v-if="counter.language==1">Thành tiền :</h1><h1 v-if="counter.language==2">Into money :</h1></div>
                 <div><h1>{{ dh['Payment_Amount'] }}</h1></div>
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id && dh['Code_Orders'].length < 15" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[200px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm">
+    <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id && dh['Code_Orders'].length < 14" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[200px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm">
         <div class="flex bg-gray-200 dark:bg-slate-800 rounded shadow-inner justify-center py-2 text-[25px] text-sky-600 font-bold"><h1 v-if="counter.language==1">Chi tiết đơn hàng</h1><h1 v-if="counter.language==2">Order details</h1></div>
         <div class="flex flex-col gap-1 text-[20px] font-medium w-full h-full mt-2  dark:bg-transparent dark:text-gray-200 shadow-inner rounded justify-center items-center ">
             <div class="flex gap-1 justify-center mt-2">
