@@ -130,8 +130,8 @@
   </div>
 
   <!-- V.Thông báo mua không thành công sản phẩm  -->
-  <div v-if="counter.showbangmuakhongthanhcongsanpham" v-on:click="counter.showBangmuakhongthanhcongsanpham();" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
-  <div v-if="counter.showbangmuakhongthanhcongsanpham" class="fixed inset-0 z-50 flex justify-center items-center rounded w-[350px] sm:w-[600px] h-[100px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm font-semibold text-red-500 text-[20px]">
+  <div v-if="counter.showbangmuakhongthanhcongsanpham" v-on:click="counter.showBangmuakhongthanhcongsanpham(); remove();" class=" fixed  inset-0 z-40 dark:bg-gray-300 bg-black cursor-pointer opacity-60 dark:opacity-30"></div>
+  <div v-if="counter.showbangmuakhongthanhcongsanpham" class="fixed inset-0 z-50 flex justify-center items-center rounded w-[350px] sm:w-[600px] h-[100px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm font-semibold text-red-500 text-[18px]">
     <h1 v-if="counter.language==1">{{ counter.thongbaoloimuahang.data['Error message'] }}</h1><h1 v-if="counter.language==2">{{ counter.thongbaoloimuahang.data['Error message English'] }}</h1>
   </div>
 </template>
