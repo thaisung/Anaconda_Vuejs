@@ -41,10 +41,10 @@
                 <div><h1 v-if="counter.language==1">Sản phẩm :</h1><h1 v-if="counter.language==2">Product :</h1></div>
                 <div><h1>{{ dh.Content }}</h1></div>
             </div>
-            <div  class="flex gap-1 justify-center">
+            <!-- <div  class="flex gap-1 justify-center">
                 <div><h1 v-if="counter.language==1">Số lượng :</h1><h1 v-if="counter.language==2">Quantity :</h1></div>
                 <div><h1>{{dh['Buy_Data'].split('\r\n').length -1  }}</h1></div>
-            </div>
+            </div> -->
             <div  class="flex gap-1 justify-center">
                 <div><h1 v-if="counter.language==1">Thành tiền :</h1><h1 v-if="counter.language==2">Into money :</h1></div>
                 <div><h1>{{ dh['Payment_Amount'] }}</h1></div>
