@@ -191,7 +191,7 @@ export const useCounterStore = defineStore('counter', {
       }
     },
     async dangxuattaikhoan(aa){
-      this.datauser = await axios({method:'post',url: this.URLServer+'/user/auth/logoutall/',headers: {Authorization: 'Token ' + this.openthongtincanhan.token }});
+      this.datauser = await axios({method:'post',url: this.URLServer+'/user/auth/logout/',headers: {Authorization: 'Token ' + this.openthongtincanhan.token }});
       this.datauser = await this.datauser.data;
       this.openthongtincanhan = aa;
       this.openthongbaoloidangnhap={thongbao:'thong bao dn',so:2};
@@ -210,7 +210,7 @@ export const useCounterStore = defineStore('counter', {
       this.Password_Level_2 = '';
     },
     async dangxuattaikhoan1(aa){
-      this.datauser = await axios({method:'post',url: this.URLServer+'/user/auth/logoutall/',headers: {Authorization: 'Token ' + this.openthongtincanhan.token }});
+      this.datauser = await axios({method:'post',url: this.URLServer+'/user/auth/logout/',headers: {Authorization: 'Token ' + this.openthongtincanhan.token }});
       this.datauser = await this.datauser.data;
       this.openthongtincanhan  = aa;
       this.openthongbaoloidangnhap={thongbao:'thong bao dn',so:2};
