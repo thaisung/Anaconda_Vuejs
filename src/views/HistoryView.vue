@@ -53,7 +53,7 @@
                 <div><h1 v-if="counter.language==1">Mã đơn hàng :</h1><h1 v-if="counter.language==2">Code orders :</h1></div>
                 <div><h1>{{ dh['Code_Orders'] }}</h1></div>
             </div>
-            <div  class="flex gap-1 justify-center font-medium text-[15px] mb-2 w-full  mt-2 max-h-[250px]  overflow-auto shrink-0 grow"><pre  :id="'myPrehistory'+dh.id" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1 grow"><h1 >{{ dh['Buy_Data'] }}</h1></pre></div>
+            <div  class="flex gap-1 justify-center font-medium text-[15px] mb-2 w-full  mt-2 max-h-[235px]  overflow-auto shrink-0 grow"><pre  :id="'myPrehistory'+dh.id" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1 grow"><h1 >{{ dh['Buy_Data'] }}</h1></pre></div>
         </div>
         <div class="flex justify-center gap-2  font-medium shadow-inner py-2 rounded items-center bg-gray-200 dark:bg-slate-800">
             <div class="flex justify-center items-center bg-sky-600 rounded w-[155px] h-[30px] dark:hover:bg-sky-500"  v-on:click="counter.DownloadFileTxt1(counter.NameProductHistory);"><button class=" text-white" v-if="counter.language==1">Tải file (.txt)</button><button v-if="counter.language==2" class=" text-white">Download files (.txt)</button></div>
@@ -64,7 +64,7 @@
 
     <div v-for="dh in counter.dulieulichsugiaodich.data.Data" v-show="counter.showbangchitietdonhang == dh.id && dh['Code_Orders'].length < 14" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[200px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm">
         <div class="flex bg-gray-200 dark:bg-slate-800 rounded shadow-inner justify-center py-2 text-[25px] text-sky-600 font-bold"><h1 v-if="counter.language==1">Chi tiết đơn hàng</h1><h1 v-if="counter.language==2">Order details</h1></div>
-        <div class="flex flex-col gap-1 text-[20px] font-medium w-full h-full mt-2  dark:bg-transparent dark:text-gray-200 shadow-inner rounded justify-center items-center ">
+        <div class="flex flex-col gap-1 text-[20px] font-semibold w-full h-full mt-2  dark:bg-transparent dark:text-gray-200 shadow-inner rounded justify-center items-center ">
             <div class="flex gap-1 justify-center mt-2">
                 <div><h1 v-if="counter.language==1">Nội dung :</h1><h1 v-if="counter.language==2">Content :</h1></div>
                 <div><h1 v-if="counter.language==1">Nạp tiền</h1><h1 v-if="counter.language==2">Recharge</h1></div>
