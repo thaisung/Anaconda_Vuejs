@@ -47,10 +47,12 @@
           <div v-for="crs in counter.cryptoinfor " v-show="counter.tabnaptien_CRYPTO==2 && crs.Crytop_Name == counter.infor_CRYPTO.Crytop_Name" class="flex flex-col grow w-full h-full justify-center items-center my-5">
             <h1 v-if="counter.language==1" class="mt-3 font-bold text-[20px]">Mã QR</h1>
             <h1 v-if="counter.language==2" class="mt-3 font-bold text-[20px]">COde QR</h1>
-            <img :src="counter.URLServer + crs.Avatar_QR_Code" class="w-[150px] h-[150px] mt-2" />
-            <h1 v-if="counter.language==1" class="mt-3 font-bold text-[20px]">Đại chỉ ví:</h1>
-            <h1 v-if="counter.language==2" class="mt-3 font-bold text-[20px]">Wallet address:</h1>
-            <h1>{{ crs.Wallet_Address }}</h1>
+            <img :src="counter.URLServer + crs.Avatar_QR_Code" class="w-[230px]  mt-3 mb-5" />
+            <div class="flex justify-center items-center gap-2">
+              <h1 v-if="counter.language==1" class="flex  font-bold text-[20px]">Đại chỉ ví :</h1>
+              <h1 v-if="counter.language==2" class=" flex  font-bold text-[20px]">Wallet address :</h1>
+              <h1 class="flex ">{{ crs.Wallet_Address }}</h1>
+            </div>
           </div>
         </div>
     </div>

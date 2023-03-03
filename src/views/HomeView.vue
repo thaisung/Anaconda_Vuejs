@@ -120,7 +120,7 @@
             <h1  v-if="counter.language==2">{{ counter.Return_Data_Type.English}}</h1>
           </div>
       </div>
-      <div  class="flex gap-1 justify-center  mb-2 w-full h-full mt-2"><pre  id="myPre" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1 dark:text-gray-300"><h1 v-for="i in counter.thongbaoloimuahang.data['Order details'].Data">{{ i+'\r\n' }}</h1></pre></div>
+      <div  class="flex gap-1 justify-center  mb-2 w-full max-h-[200px] mt-2 overflow-auto shrink-0 grow"><pre  id="myPre" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1 dark:text-gray-300 shrink-0 "><h1 v-for="i in counter.thongbaoloimuahang.data['Order details'].Data">{{ i+'\r\n' }}</h1></pre></div>
       </div>
       <div class="flex justify-center gap-2 bg-gray-200 dark:bg-slate-800 font-medium shadow-inner py-2 rounded items-center">
         <div class="flex justify-center items-center bg-sky-600 rounded  hover:bg-sky-500 "  v-on:click="counter.DownloadFileTxt(); counter.showBangmuathanhcongsanpham();"><button class=" text-white px-2 py-[3px]"><h1 v-if="counter.language==1">Tải file (.txt)</h1><h1 v-if="counter.language==2">Download files (.txt)</h1></button></div>
