@@ -97,19 +97,19 @@
   <div v-if="counter.showbangmuathanhcongsanpham" class="fixed inset-0 z-50 flex flex-col justify-between rounded w-[350px] sm:w-[600px] h-[500px] bg-white dark:bg-slate-900 mx-auto my-auto px-2 py-2 shadow-sm">
       <div class="flex bg-gray-200 dark:bg-slate-800 rounded shadow-inner justify-center py-2 text-[25px] text-sky-600 font-bold"><h1 v-if="counter.language==1">Bạn đã mua thành công</h1><h1 v-if="counter.language==2">You have successfully purchased</h1></div>
       <div class="flex flex-col gap-1 text-[15px] font-medium w-full h-full mt-3">
-      <div class="flex gap-1 justify-center dark:text-gray-300">
+      <div class="flex gap-1 justify-center dark:text-gray-300 font-semibold text-[17px]">
           <div><h1  v-if="counter.language==1">Sản phẩm :</h1><h1  v-if="counter.language==2">Product :</h1></div>
           <div><h1>{{ counter.thongbaoloimuahang.data['Order details']['Product name buy'] }}</h1></div>
       </div>
-      <div  class="flex gap-1 justify-center dark:text-gray-300">
+      <div  class="flex gap-1 justify-center dark:text-gray-300 font-semibold text-[17px]">
           <div><h1  v-if="counter.language==1">Số lượng :</h1><h1  v-if="counter.language==2">Quantity :</h1></div>
           <div><h1>{{ counter.thongbaoloimuahang.data['Order details']['Quantity buy'] }}</h1></div>
       </div>
-      <div  class="flex gap-1 justify-center dark:text-gray-300">
+      <div  class="flex gap-1 justify-center dark:text-gray-300 font-semibold text-[17px]">
           <div><h1  v-if="counter.language==1">Thành tiền :</h1><h1  v-if="counter.language==2">Into money :</h1></div>
           <div><h1>{{ counter.thongbaoloimuahang.data['Order details']['Transaction amount'] }}</h1></div>
       </div>
-      <div  class="flex gap-1 justify-center dark:text-gray-300">
+      <div  class="flex gap-1 justify-center dark:text-gray-300 font-semibold text-[17px]">
           <div><h1  v-if="counter.language==1">Mã đơn hàng :</h1><h1  v-if="counter.language==2">Code orders :</h1></div>
           <div><h1>{{ counter.thongbaoloimuahang.data['Order details']['Code orders'] }}</h1></div>
       </div>
@@ -120,7 +120,7 @@
             <h1  v-if="counter.language==2">{{ counter.Return_Data_Type.English}}</h1>
           </div>
       </div>
-      <div  class="flex gap-1 justify-center  mb-2 w-full max-h-[200px] mt-2 overflow-auto shrink-0 grow"><pre  id="myPre" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1 dark:text-gray-300 shrink-0 "><h1 v-for="i in counter.thongbaoloimuahang.data['Order details'].Data">{{ i+'\r\n' }}</h1></pre></div>
+      <div  class="flex gap-1 justify-center font-medium text-[15px]  mb-2 w-full max-h-[200px] mt-2 overflow-auto shrink-0 grow"><pre  id="myPre" class="  font-medium border-2 border-sky-600 rounded w-full h-full resize-none  overflow-auto px-1 py-1 dark:text-gray-300 shrink-0 "><h1 v-for="i in counter.thongbaoloimuahang.data['Order details'].Data">{{ i+'\r\n' }}</h1></pre></div>
       </div>
       <div class="flex justify-center gap-2 bg-gray-200 dark:bg-slate-800 font-medium shadow-inner py-2 rounded items-center">
         <div class="flex justify-center items-center bg-sky-600 rounded  hover:bg-sky-500 "  v-on:click="counter.DownloadFileTxt(); counter.showBangmuathanhcongsanpham();"><button class=" text-white px-2 py-[3px]"><h1 v-if="counter.language==1">Tải file (.txt)</h1><h1 v-if="counter.language==2">Download files (.txt)</h1></button></div>
