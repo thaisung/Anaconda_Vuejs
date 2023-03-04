@@ -70,7 +70,7 @@
                     </div>
                     <div class="flex flex-col gap-2 bg-gray-200 dark:bg-slate-700 px-2 py-2 rounded overflow-x-auto lg:mx-6">
                         <div class="text-gray-600 dark:text-sky-300"><h1>Reponse</h1></div>
-                        <div class="flex gap-2"><pre class="">{"Purchase information":"Successfully purchase !","Order details":{"Account":"ban","Product name buy":"Hotmail 1","Code orders":"6c7ad80826bc4a6aad6dd37408636681","Quantity buy":"2","Transaction amount":"-4000","Data":["fghgfh","fghfgh"]}}</pre></div>
+                        <div class="flex gap-2"><pre class="">{"Purchase information":"Successfully purchase !","Order details":{"Account":"ban","Product name buy":"Facebook _1","Code orders":"d1105c8babf944d","Quantity buy":"5","Transaction amount":"-50","Data":["dare3llaford@onet.pl|StOj8vEJve","zottel1970@t-online.de|nimgr516","annzowe@rediffmail.com|rahul1234","haichen.haichen@eyou.com|haichen123","raquel.maria74@yahoo.it|wgcdjyppaupgrytl123"]}}</pre></div>
                     </div>
                 </div>
             </div>
